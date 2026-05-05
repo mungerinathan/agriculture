@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Market Info - RW Agro Market</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#e8f5e9;
+}
+
+/* HEADER */
+header{
+    background:#1b5e20;
+    color:white;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    border-radius:10px;
+    object-fit:cover;
+    background:white;
+}
+
+.logo h1{
+    margin:0;
+    font-size:20px;
+}
+
+.logo p{
+    margin:0;
+    font-size:13px;
+    opacity:0.9;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:5px;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-left:6px solid #2e7d32;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#1b5e20;
+}
+
+/* SEARCH */
+input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+th, td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
+
+th{
+    background:#c8e6c9;
+}
+
+/* BADGE */
+.badge{
+    padding:5px 10px;
+    border-radius:5px;
+    font-size:12px;
+    color:white;
+}
+
+.up{background:#2e7d32;}
+.down{background:#c62828;}
+.stable{background:#f9a825;}
+
+/* LIST */
+ul li{
+    margin:8px 0;
+}
+
+/* FOOTER */
+footer{
+    background:#1b5e20;
+    color:white;
+    padding:30px 15px;
+    margin-top:40px;
+    text-align:center;
+}
+.footer-container a{
+    color:white;
+    text-decoration:none;
+    display:block;
+    margin:5px 0;
+    opacity:0.9;
+}
+
+.footer-container a:hover{
+    opacity:1;
+    text-decoration:underline;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="header-container">
+
+    <div class="logo">
+<img src="agricultural logo.png">
+        <div>
+            <h1>RW-Rulindo Agro Market</h1>
+            <p>Welcome to market for crops and agricultural products</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login2.html">Login</a>
+        <a href="sign up.html">Sign up</a>
+        <a href="productshop.html">Shop</a>
+        <a href="service.html">Services</a>
+        <a href="checkautform.html">Orders</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</div>
+</header>
+
+<!-- CONTENT -->
+<div class="container">
+
+<!-- SEARCH -->
+<div class="card">
+<h2>🔍 Search Products</h2>
+<input type="text" id="search" onkeyup="filterTable()" placeholder="Search (Maize, Beans, Rice...)">
+</div>
+
+<!-- TABLE -->
+<div class="card">
+<h2>🌾 Crop Prices</h2>
+
+<table id="marketTable">
+<tr>
+<th>Product</th>
+<th>Price (RWF/kg)</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Maize 🌽</td>
+<td>300</td>
+<td><span class="badge up">Increasing ⬆</span></td>
+</tr>
+
+<tr>
+<td>Beans 🫘</td>
+<td>800</td>
+<td><span class="badge stable">Stable ➖</span></td>
+</tr>
+
+<tr>
+<td>Rice 🍚</td>
+<td>1200</td>
+<td><span class="badge down">Decreasing ⬇</span></td>
+</tr>
+
+<tr>
+<td>Potatoes 🥔</td>
+<td>500</td>
+<td><span class="badge stable">Stable ➖</span></td>
+</tr>
+
+<tr>
+<td>Vegetables 🥕</td>
+<td>400</td>
+<td><span class="badge up">Increasing ⬆</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- TRENDS -->
+<div class="card">
+<h2>📈 Market Trends</h2>
+
+<ul>
+<li>🌽 Maize demand is increasing due to food industries</li>
+<li>🫘 Beans price is stable in local markets</li>
+<li>🍚 Rice import prices are decreasing</li>
+<li>🥕 Vegetables demand is high in cities</li>
+</ul>
+
+</div>
+
+<!-- INFO -->
+<div class="card">
+<h2>ℹ Market Updates</h2>
+<p>✔ Prices updated weekly</p>
+<p>✔ Data from local agricultural markets</p>
+<p>✔ Helps farmers choose best selling crops</p>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-container" style="
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:25px;
+    padding:30px 20px;
+">
+
+    <!-- ABOUT -->
+    <div>
+        <h3>RW-Rulindo Agro Market</h3>
+        <p>We connect farmers and buyers across Rwanda for better agriculture trade.</p>
+    </div>
+
+    <!-- LINKS -->
+    <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="login2.html">Login</a>
+        <a href="sign up.html">Sign up</a>
+        <a href="productshop.html">Shop</a>
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- FOLLOW -->
+    <div>
+        <h3>Follow Us</h3>
+
+        <div class="social" style="display:flex; gap:10px; margin-top:10px;">
+
+            <a href="#" style="background:#3b5998; color:white; padding:10px; border-radius:50%;">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" style="background:#E1306C; color:white; padding:10px; border-radius:50%;">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" style="background:#1DA1F2; color:white; padding:10px; border-radius:50%;">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="https://wa.me/250788123456" style="background:#25D366; color:white; padding:10px; border-radius:50%;">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- BOTTOM -->
+<div style="
+    text-align:center;
+    padding:15px;
+    border-top:1px solid rgba(255,255,255,0.2);
+    font-size:14px;
+    opacity:0.8;
+">
+© 2026 RW-Rulindo Agro Market | All Rights Reserved 🌾
+</div>
+
+</footer>
+
+<script>
+
+// SEARCH FILTER
+function filterTable(){
+    let input = document.getElementById("search").value.toLowerCase();
+    let rows = document.querySelectorAll("#marketTable tr");
+
+    rows.forEach((row, index)=>{
+        if(index === 0) return;
+
+        let text = row.innerText.toLowerCase();
+        row.style.display = text.includes(input) ? "" : "none";
+    });
+}
+
+</script>
+
+</body>
+</html>

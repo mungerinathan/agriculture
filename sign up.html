@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RW-Rulindo Agro Market</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f5f5f5;
+}
+
+/* HEADER */
+header{
+    background:#1b5e20;
+    color:white;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    border-radius:10px;
+    object-fit:cover;
+}
+
+.logo h1{
+    margin:0;
+    font-size:20px;
+}
+
+.logo p{
+    margin:0;
+    font-size:13px;
+    opacity:0.9;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:5px;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* FORM */
+.container{
+    width:90%;
+    max-width:500px;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:green;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkgreen;
+}
+
+/* CARD */
+.card{
+    width:90%;
+    max-width:500px;
+    margin:20px auto;
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.product-img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+.price{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:bold;
+}
+
+.price img{
+    width:22px;
+}
+
+/* FOOTER */
+footer{
+    background:#1b5e20;
+    color:white;
+    padding:30px 15px;
+    margin-top:40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.footer-grid a{
+    color:white;
+    text-decoration:none;
+    display:block;
+    margin:5px 0;
+}
+
+.footer-grid a:hover{
+    text-decoration:underline;
+}
+
+.social{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.social a{
+    width:35px;
+    height:35px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(255,255,255,0.2);
+    color:white;
+    text-decoration:none;
+}
+
+.social a:hover{
+    background:white;
+    color:#1b5e20;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="header-container">
+
+    <div class="logo">
+        <img src="agricultural logo.png">
+        <div>
+            <h1>RW-Rulindo Agro Market</h1>
+            <p>Market for crops & agricultural products</p>
+        </div>
+    </div>
+
+    <nav>
+       <a href="index.html">Home</a>
+<a href="login2.html">Login</a>
+<a href="sign up.html">sign up</a>
+<a href="productshop.html">Shop</a>
+<a href="service.html">Services</a>
+<a href="checkautform.html">Orders</a>
+<a href="contact.html">Contact</a>
+    </nav>
+
+</div>
+</header>
+
+<!-- FARMER FORM -->
+<div class="container">
+    <h3>🌾 Register Farmer</h3>
+
+    <input type="text" id="name" placeholder="Farmer Name">
+    <input type="text" id="location" placeholder="Location">
+    <input type="text" id="product" placeholder="Product Name">
+    <input type="text" id="image" placeholder="Product Image URL">
+    <input type="number" id="price" placeholder="Price (RWF)">
+    <textarea id="bio" placeholder="Farmer Description"></textarea>
+
+    <button onclick="submitData()">Submit</button>
+</div>
+
+<!-- OUTPUT -->
+<div id="output"></div>
+
+<script>
+function submitData(){
+
+    let name = document.getElementById("name").value;
+    let location = document.getElementById("location").value;
+    let product = document.getElementById("product").value;
+    let image = document.getElementById("image").value;
+    let price = document.getElementById("price").value;
+    let bio = document.getElementById("bio").value;
+
+    if(name=="" || product=="" || price==""){
+        alert("Uzuza amakuru y'ingenzi!");
+        return;
+    }
+
+    let card = `
+    <div class="card">
+        <h3>👨‍🌾 ${name}</h3>
+        <p>📍 ${location}</p>
+        <p>🌱 ${product}</p>
+
+        <img class="product-img" src="${image}">
+
+        <p class="price">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
+            ${price} RWF
+        </p>
+
+        <p>📝 ${bio}</p>
+    </div>
+    `;
+
+    document.getElementById("output").innerHTML += card;
+
+    document.getElementById("name").value="";
+    document.getElementById("location").value="";
+    document.getElementById("product").value="";
+    document.getElementById("image").value="";
+    document.getElementById("price").value="";
+    document.getElementById("bio").value="";
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-grid">
+
+    <div>
+        <h3>RW-Rulindo Agro Market</h3>
+        <p>We connect farmers and buyers across Rwanda.</p>
+    </div>
+
+    <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="login2.html">Login</a>
+        <a href="productshop.html">Shop</a>
+        <a href="service.html">Services</a>
+        <a href="checkautform.html">Orders</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+        <h3>Follow Us</h3>
+
+        <div class="social">
+
+            <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://wa.me/250788123456"><i class="fa-brands fa-whatsapp"></i></a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div style="text-align:center; margin-top:20px; font-size:14px; opacity:0.8;">
+© 2026 RW-Rulindo Agro Market
+</div>
+
+</footer>
+
+</body>
+</html>

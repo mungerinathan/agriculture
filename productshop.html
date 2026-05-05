@@ -7,10 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> welcome to RW-Rulindo Agro Market</title>
 
-   <img src="agricultural logo.png" style="width:50px; height:50px; border-radius:40px; background:white; padding:5px;">
-        
+  
 
-      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    
 
 
 <style>
@@ -180,6 +179,45 @@ footer {
   padding: 20px;
   margin-top: 30px;
 }
+/* MENU STYLE */
+.menu {
+  margin-top: 15px;
+}
+
+.menu a {
+  text-decoration: none;
+  background: white;
+  color: #2e7d32;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 6px;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{
+  width:80px;   /* nto */
+  height:80px;  /* nto */
+  border-radius:50%;
+  object-fit:cover;
+  background:white;
+}
+
+
+
+
 </style>
 
 
@@ -188,34 +226,50 @@ footer {
 
 <body>
 
-<!-- BACK BUTTON -->
-<button onclick="goBack()" class="back-btn">⬅ Back to Home</button>
 
 <header class="main-header">
-  <h1>RW-Rulindo Agro Market</h1>
 
-  <div class="top-controls">
-    <input type="text" class="search-bar" placeholder="Find product..." onkeyup="searchProduct()">
-    
-    <button class="cart-btn" onclick="toggleCart()">🛒 Cart</button>
+  <div class="header-container">
 
-    <div class="cart-dropdown" id="cartMenu">
-      <h3>Your Cart</h3>
-      <div id="cartItems"></div>
-      <div class="total" id="total"></div>
+    <!-- LOGO -->
+    <div class="logo">
+  <img src="agricultural%20logo.png" alt="logo">
+      <div>
+        <h1>RW-Rulindo Agro Market</h1>
+        <p>Welcome to market for crops and agricultural products</p>
+      </div>
     </div>
+
+    <!-- SEARCH + CART -->
+    <div class="top-controls">
+      <input type="text" class="search-bar" placeholder="Find product..." onkeyup="searchProduct()">
+
+      <button class="cart-btn" onclick="toggleCart()">🛒 Cart</button>
+
+      <div class="cart-dropdown" id="cartMenu">
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+        <div class="total" id="total"></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- MENU -->
-    <nav class="menu">
-      <a href="index.html">Home</a>
-      <a href="login2.html">login</a>
-      <a href="productshop.html">shop</a>
-      <a href="service.html">service</a>
-        <a href="checkautform.html">Checkout</a>
-    </nav>
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="login2.html">Login</a>
+    <a href="sign up.html">Sign up</a>
+    <a href="productshop.html">Shop</a>
+    <a href="service.html">Services</a>
+    <a href="checkautform.html">Orders</a>
+    <a href="contact.html">Contact</a>
+      <a href="payment.html">Payment</a>
+  </nav>
+
 </header>
 
+ 
 <div class="container">
   <h2>Our Products</h2>
 
@@ -265,7 +319,7 @@ footer {
       <img src="6.jfif">
       <h3>Avocado</h3>
            <h3>farmer:chantal uwase</h3>
-      <p>700 RWF</p>
+      <p>700 RWF for one</p>
       <button onclick="addToCart('Avocado',700)">Add to Cart</button>
     </div>
 
@@ -273,7 +327,7 @@ footer {
       <img src="7.jfif">
       <h3>Onion</h3>
            <h3>farmer:innocent niyonsaba</h3>
-      <p>300 RWF</p>
+      <p>300 RWF for one</p>
       <button onclick="addToCart('Onion',300)">Add to Cart</button>
     </div>
 
@@ -377,7 +431,7 @@ footer {
     <div class="product">
       <img src="19.jfif">
       <h3>mangoes</h3>
-           <h3>farmer:kabaka</h3>
+           <h3>farmer:kabaka nyawe</h3>
       <p>400 RWF for one</p>
       <button onclick="addToCart('mangoes',400)">Add to Cart</button>
     </div>
@@ -386,18 +440,47 @@ footer {
     <div class="product">
       <img src="20.jfif">
       <h3>eggs</h3>
-           <h3>farmer:mushi</h3>
+           <h3>farmer:mushimire\</h3>
       <p>200 RWF for one</p>
       <button onclick="addToCart('eggs',400)">Add to Cart</button>
     </div>
 
   </div>
 </div>
+<footer style="background:#2e7d32; color:white; text-align:center; padding:20px;">
 
-<footer>
-  <p>Email: info@agromarket.rw</p>
-  <p>Phone: +250 735 907 160</p>
-  <p>&copy; 2026 RW-Rulindo Agro Market</p>
+  <p>Follow Us</p>
+
+  <div style="margin-top:10px;">
+
+    <!-- FACEBOOK -->
+    <a href="https://facebook.com" target="_blank"
+       style="margin:5px; padding:12px; background:#3b5998; color:white; border-radius:50%; display:inline-block;">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <!-- INSTAGRAM -->
+    <a href="https://instagram.com" target="_blank"
+       style="margin:5px; padding:12px; background:#E1306C; color:white; border-radius:50%; display:inline-block;">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <!-- TWITTER -->
+    <a href="https://twitter.com" target="_blank"
+       style="margin:5px; padding:12px; background:#1DA1F2; color:white; border-radius:50%; display:inline-block;">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/250735907160" target="_blank"
+       style="margin:5px; padding:12px; background:#25D366; color:white; border-radius:50%; display:inline-block;">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+  <p style="margin-top:10px;">© 2026 RW-Rulindo Agro Market</p>
+
 </footer>
 
 <script>

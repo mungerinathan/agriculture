@@ -2,48 +2,124 @@
 <html>
 <head>
     <title>Contact - Agro Market</title>
-    <link rel="stylesheet" href="contact.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+        function sendMessage() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            if(name === "" || email === "" || message === ""){
+                alert("Please fill all fields!");
+                return;
+            }
+
+            alert("Message sent successfully! Thank you " + name);
+        }
+    </script>
 </head>
-<body>
+
+<body style="margin:0; font-family:Arial, sans-serif;">
 
 <!-- HEADER -->
-<header>
-    <h1>RW-Rulindo Agro Market</h1>
+<header style="display:flex; justify-content:space-between; align-items:center; background:#0aa851; padding:40px 40px;">
+
+    <div style="color:white; font-size:22px; font-weight:bold;">
+        RW-Rulindo Agro Market
+    </div>
+
+    <ul style="list-style:none; display:flex; gap:25px; margin:0; padding:0;">
+        <li><a href="index.html" style="text-decoration:none; color:white; font-weight:bold;">Home</a></li>
+        <li><a href="login2.html" style="text-decoration:none; color:white; font-weight:bold;">login2</a></li>
+        <li><a href="productshop.html" style="text-decoration:none; color:white; font-weight:bold;">products</a></li>
+        <li><a href="service.html" style="text-decoration:none; color:white; font-weight:bold;">services</a></li>
+        <li><a href="checkautform.html" style="text-decoration:none; color:white; font-weight:bold;">Checkout</a></li>
+    </ul>
+
 </header>
 
 <!-- CONTACT SECTION -->
-<section class="contact">
-    <h2>Contact Us</h2>
+<section style="padding:50px; text-align:center; background:#f4f4f4;">
+    <h2 style="margin-bottom:20px;">Contact Us</h2>
 
-    <div class="contact-container">
+    <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:30px;">
 
         <!-- CONTACT INFO -->
-        <div class="contact-info">
+        <div style="background:white; padding:20px; border-radius:10px;
+        
+        width:300px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
             <h3>Get in Touch</h3>
             <p>Email: info@agromarket.rw</p>
-            <p>Phone: +250 788 123 456</p>
+            <p>Phone: +250 735 907 160</p>
             <p>Location: Rulindo, Rwanda</p>
         </div>
 
-        <!-- FORM -->
-        <div class="contact-form">
-            <input type="text" id="name" placeholder="Your Name">
-            <input type="email" id="email" placeholder="Your Email">
-            <textarea id="message" placeholder="Your Message"></textarea>
+        <!-- CONTACT FORM -->
+        <div style="background:white; padding:20px; border-radius:10px; width:300px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+            <form onsubmit="event.preventDefault(); sendMessage();">
 
-            <button onclick="sendMessage()">Send Message</button>
+                <input type="text" id="name" placeholder="Your Name"
+                style="width:90%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:5px;">
+
+                <input type="email" id="email" placeholder="Your Email"
+                style="width:90%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:5px;">
+
+                <textarea id="message" placeholder="Your Message"
+                style="width:90%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:5px;"></textarea>
+
+                <button type="submit"
+                style="padding:10px 20px; background:#0aa851; color:white; border:none; border-radius:5px; cursor:pointer;">
+                    Send Message
+                </button>
+
+            </form>
         </div>
 
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer style="background:#0aa851; color:white; 
+
+text-align:center; padding:20px;">
+
     <p>Email: info@agromarket.rw</p>
-    <p>Tel: +250 788 123 456</p>
+    <p>Tel: +250 735 907 160</p>
     <p>© 2026 RW-Rulindo Agro Market</p>
+
+    <!-- SOCIAL ICONS -->
+    <div style="margin-top:10px;">
+
+        <a href="#" style="margin:5px; padding:12px; background:#3b5998;
+        
+        color:white; border-radius:50%; display:inline-block;">
+            <i class="fa fa-facebook"></i>
+        </a>
+
+        <a href="#" style="margin:5px; padding:12px; background:#E1306C;
+        
+        color:white; border-radius:50%; display:inline-block;">
+            <i class="fa fa-instagram"></i>
+        </a>
+
+        <a href="#" style="margin:5px; padding:12px; background:#1DA1F2;
+        
+        color:white; border-radius:50%; display:inline-block;">
+            <i class="fa fa-twitter"></i>
+        </a>
+
+        <a href="https://wa.me/250 735 907 160" style="margin:5px; padding:12px;
+        
+        background:#25D366; color:white; border-radius:50%; display:inline-block;">
+            <i class="fa fa-whatsapp"></i>
+        </a>
+
+    </div>
+
 </footer>
 
-<script src="contact.js"></script>
 </body>
 </html>

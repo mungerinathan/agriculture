@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RW-Rulindo Agro Market</title>
 
+<!-- FONT AWESOME (WORKING) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
 
 /* RESET */
@@ -24,7 +27,7 @@ body{
 header{
     background:#1b5e20;
     color:white;
-    padding:15px 20px;
+    padding:35px 20px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -53,6 +56,7 @@ header{
     font-size:12px;
 }
 
+/* NAV */
 nav{
     display:flex;
     gap:15px;
@@ -62,6 +66,11 @@ nav a{
     color:white;
     text-decoration:none;
     font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#c8e6c9;
 }
 
 /* HERO */
@@ -71,8 +80,15 @@ nav a{
     justify-content:center;
     align-items:center;
     text-align:center;
-    background:url('mu.png') center/cover no-repeat;
+
+    background:url('mun.png') center/cover no-repeat;
+
+
+
+
+    
     padding:20px;
+
 }
 
 .hero-text{
@@ -88,7 +104,7 @@ nav a{
 
 /* BANNER */
 .banner{
-    padding:40px 20px;
+    padding:40px 40px;
     text-align:center;
     background:#e8f5e9;
 }
@@ -100,16 +116,57 @@ nav a{
     border:2px solid #2e7d32;
 }
 
-.banner a{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
+/* BANNER (UPDATED) */
+/* BANNER SECTION */
+.banner{
+    padding:40px 20px;
+    background:#e8f5e9;
+}
+
+/* LEFT + RIGHT LAYOUT */
+.banner-container{
+    display:flex;
+    justify-content:space-between; /* left & right */
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap; /* responsive */
+}
+
+/* LEFT IMAGE */
+.banner-container img{
+    width:250px;
+    height:auto;
+    border-radius:10px;
+    border:2px solid #2e7d32;
+}
+
+/* RIGHT MENU */
+.banner-menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:flex-end; /* menus zijya iburyo */
+}
+
+.banner-menu h3{
+    color:#2e7d32;
+}
+
+/* MENU BUTTONS */
+.banner-menu a{
+    padding:10px 15px;
     background:#2e7d32;
     color:white;
     text-decoration:none;
     border-radius:5px;
+    width:140px;
+    text-align:center;
+    transition:0.3s;
 }
 
+.banner-menu a:hover{
+    background:#1b5e20;
+}
 /* SECTIONS */
 section{
     padding:50px 20px;
@@ -151,46 +208,49 @@ footer a{
     text-decoration:none;
 }
 
+/* SOCIAL */
+.social{
+    margin-top:15px;
+}
+
+.social a{
+    margin:5px;
+    padding:12px;
+    border-radius:50%;
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social a:hover{
+    transform:scale(1.2);
+    opacity:0.8;
+}
+
+/* ICON COLORS */
+.facebook{background:#3b5998;}
+.instagram{background:#E1306C;}
+.twitter{background:#1DA1F2;}
+.whatsapp{background:#25D366;}
+
 /* RESPONSIVE */
 @media(max-width:768px){
 
     header{
         flex-direction:column;
         text-align:center;
-        gap:10px;
+        gap:20px;
     }
 
     nav{
         flex-direction:column;
-        gap:10px;
     }
 
     .hero{
         min-height:60vh;
     }
-
-    .hero-text h2{
-        font-size:20px;
-    }
-
 }
-
-@media(max-width:480px){
-
-    .hero-text{
-        padding:15px;
-    }
-
-    .hero-text h2{
-        font-size:18px;
-    }
-
-    nav a{
-        font-size:14px;
-    }
-
-}
-
 </style>
 </head>
 
@@ -210,9 +270,12 @@ footer a{
 <nav>
 <a href="index.html">Home</a>
 <a href="login2.html">Login</a>
+<p><a href="sign up.html">sign up</a></p>
 <a href="productshop.html">Shop</a>
 <a href="service.html">Services</a>
 <a href="checkautform.html">Orders</a>
+<a href="contact.html">Contact</a>
+
 </nav>
 
 </header>
@@ -220,16 +283,33 @@ footer a{
 <!-- HERO -->
 <section class="hero">
 <div class="hero-text">
-<h2>Welcome to RW-Rulindo Agro Marketing for Buy and Sell Agricultural Products Easily</h2>
+<h2>Welcome to RW-Rulindo Agro Market for Buy and Sell Agricultural Products Easily</h2>
 <p>We connect farmers directly to buyers</p>
 </div>
 </section>
 
 <!-- BANNER -->
 <section class="banner">
-<img src="martha image.png">
-<br>
-<a href="productshop.html">Shop Now</a>
+
+<div class="banner-container">
+
+    <!-- LEFT: IMAGE -->
+    <img src="l444.png" alt="Banner Image">
+
+    <!-- RIGHT: MENU -->
+    <div class="banner-menu">
+        <h3>Quick Menu</h3>
+
+
+    
+        <a href="user guide manual.html">user guide manual</a>
+        <a href="infographic.html">infogaphic</a>
+        <a href="game.html">play game</a>
+        <a href="farmer upload.html">Upload product</a>
+    </div>
+
+</div>
+
 </section>
 
 <!-- PRODUCTS -->
@@ -237,28 +317,12 @@ footer a{
 <h2 style="color:#2e7d32;">Agricultural products in the Market</h2>
 
 <div class="grid">
-
-<div>
-<img src="nathanimage4.jfif">
-<p>Farmer Jean</p>
+<div><img src="nathanimage4.jfif"><p>Farmer Jean</p></div>
+<div><img src="nathanimage5.jfif"><p>Farmer Marie</p></div>
+<div><img src="nathanimage6.jfif"><p>Farmer Bosco</p></div>
+<div><img src="nathanimage7.jfif"><p>Farmer Aline</p></div>
 </div>
 
-<div>
-<img src="nathanimage5.jfif">
-<p>Farmer Marie</p>
-</div>
-
-<div>
-<img src="nathanimage6.jfif">
-<p>Farmer Bosco</p>
-</div>
-
-<div>
-<img src="nathanimage7.jfif">
-<p>Farmer Aline</p>
-</div>
-
-</div>
 </section>
 
 <!-- FARMERS -->
@@ -266,28 +330,12 @@ footer a{
 <h2 style="color:#2e7d32;">Our farmers’ workplace</h2>
 
 <div class="grid">
-
-<div>
-<img src="nathanimage3.jfif">
-<p>Farmer Jean</p>
+<div><img src="nathanimage3.jfif"><p>Farmer Jean</p></div>
+<div><img src="nathanimage2.jfif"><p>Farmer Marie</p></div>
+<div><img src="nathanimage1.jfif"><p>Farmer Bosco</p></div>
+<div><img src="nathanimage.jfif"><p>Farmer Aline</p></div>
 </div>
 
-<div>
-<img src="nathanimage2.jfif">
-<p>Farmer Marie</p>
-</div>
-
-<div>
-<img src="nathanimage1.jfif">
-<p>Farmer Bosco</p>
-</div>
-
-<div>
-<img src="nathanimage.jfif">
-<p>Farmer Aline</p>
-</div>
-
-</div>
 </section>
 
 <!-- FOOTER -->
@@ -297,15 +345,44 @@ footer a{
 
 <div>
 <h3>RW-Rulindo Agro Market</h3>
-<p>We connect farmers and buyers across Rwanda to ensure fair trade and easy access to agricultural products.</p>
+<p>We connect farmers and buyers across Rwanda.</p>
 </div>
 
 <div>
 <h3>Quick Links</h3>
 <p><a href="index.html">Home</a></p>
+<p><a href="login2.html">login</a></p>
+<p><a href="sign up.html">sign up</a></p>
 <p><a href="productshop.html">Shop</a></p>
 <p><a href="service.html">Services</a></p>
-<p><a href="contact.html">Contact</a></p>
+<p><a href="checkautform.html">Order</a></p>
+<p><a href="contact.html">contact</a></p>
+
+</div>
+
+<div>
+<h3>Follow Us</h3>
+
+<div class="social">
+
+<a href="https://facebook.com" class="facebook" target="_blank">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="https://instagram.com" class="instagram" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://twitter.com" class="twitter" target="_blank">
+<i class="fa-brands fa-twitter"></i>
+</a>
+
+<a href="https://wa.me/250788123456" class="whatsapp" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
 </div>
 
 </div>

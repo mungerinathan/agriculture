@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmer Support - RW Agro Market</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#e8f5e9;
+}
+
+/* ===== HEADER ===== */
+header{
+    background:#1b5e20;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* LOGO AREA */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+}
+
+.logo-text h1{
+    margin:0;
+    font-size:20px;
+}
+
+.logo-text p{
+    margin:3px 0 0 0;
+    font-size:12px;
+    color:#c8e6c9;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-left:6px solid #2e7d32;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#1b5e20;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+/* BOX */
+.box{
+    background:#c8e6c9;
+    padding:15px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* FORM */
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button{
+    background:#2e7d32;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#1b5e20;
+}
+
+/* FOOTER */
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    nav{
+        width:100%;
+        justify-content:center;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+
+  <div class="logo">
+
+    <img src="agricultural logo.png">
+
+    <div class="logo-text">
+      <h1>RW-Rulindo Agro Market</h1>
+      <p>Welcome to market for crops and agricultural products</p>
+    </div>
+
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="login2.html">Login</a>
+    <a href="productshop.html">Shop</a>
+    <a href="service.html">Services</a>
+    <a href="checkautform.html">Orders</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+</header>
+
+<!-- ===== CONTENT ===== -->
+<div class="container">
+
+<!-- TRAINING -->
+<div class="card">
+<h2>📚 Training & Education</h2>
+
+<div class="grid">
+<div class="box">🌱 Modern Farming</div>
+<div class="box">💧 Irrigation Methods</div>
+<div class="box">🐛 Pest Control</div>
+<div class="box">🧪 Fertilizer Use</div>
+</div>
+
+</div>
+
+<!-- ADVICE FORM -->
+<div class="card">
+<h2>🧑‍🌾 Ask for Farming Advice</h2>
+
+<form>
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Crop Type (e.g. Maize)">
+<textarea rows="4" placeholder="Describe your problem..."></textarea>
+<button type="submit">Send Request</button>
+</form>
+
+</div>
+
+<!-- MARKET ACCESS -->
+<div class="card">
+<h2>📊 Market Access</h2>
+<p>We connect farmers directly with buyers for better prices and faster sales.</p>
+<ul>
+<li>🛒 Direct selling platform</li>
+<li>📈 Market price updates</li>
+<li>🤝 Buyer connections</li>
+</ul>
+</div>
+
+<!-- FINANCE -->
+<div class="card">
+<h2>💰 Financial Support</h2>
+<ul>
+<li>💳 Farmer loans guidance</li>
+<li>🏦 Savings groups (SACCO)</li>
+<li>📱 Mobile Money support</li>
+</ul>
+</div>
+
+<!-- CONTACT -->
+<div class="card" style="text-align:center;">
+<h2>📞 Contact Support</h2>
+
+<p>📱 +250 735 907 160</p>
+<p>✉️ info@agromarket.rw</p>
+
+<button onclick="window.location.href='contact.html'">
+Contact Us
+</button>
+
+</div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+© 2026 RW-Rulindo Agro Market | Farmer Support 🌾👨‍🌾
+</footer>
+
+</body>
+</html>

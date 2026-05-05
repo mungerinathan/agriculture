@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RW-Agro-Market Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f4f8f4;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:#1b5e20;
+    color:white;
+    flex-wrap:wrap;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:50px;
+}
+
+/* NAVBAR */
+nav a{
+    text-decoration:none;
+    color:white;
+    padding:10px 15px;
+    margin:5px;
+    border-radius:5px;
+}
+
+/* HOVER */
+nav a:hover{
+    background:#388e3c;
+}
+
+/* ACTIVE */
+nav a.active{
+    background:white;
+    color:#1b5e20;
+}
+
+/* TITLE */
+.title{
+    text-align:center;
+    padding:30px;
+    background:white;
+}
+
+/* CHART */
+.chart-container{
+    width:95%;
+    max-width:1100px;
+    margin:40px auto;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* FOOTER GRID */
+.footer-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* FOOTER LINKS */
+.footer-grid a{
+    text-decoration:none;
+    color:#c8e6c9;
+}
+
+.footer-grid a:hover{
+    color:white;
+}
+
+/* SOCIAL ICONS */
+.social{
+    display:flex;
+    gap:15px;
+    margin-top:10px;
+}
+
+.social a{
+    width:35px;
+    height:35px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    color:white;
+    text-decoration:none;
+}
+
+/* COLORS */
+.facebook{background:#3b5998;}
+.instagram{background:#e1306c;}
+.twitter{background:#1da1f2;}
+.whatsapp{background:#25d366;}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="agricultural logo.png">
+<div>
+<h1>RW-Rulindo Agro Market</h1>
+<p>Welcome to market for crops and agricultural products</p>
+</div>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="login2.html">Login</a>
+<a href="sign up.html">sign up</a>
+<a href="productshop.html">Shop</a>
+<a href="service.html">Services</a>
+<a href="checkautform.html">Orders</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<div class="title">
+<h1 style="color:#2e7d32;">Farming Activities Dashboard</h1>
+<p>Farmers and Crops per Sector</p>
+</div>
+
+<div class="chart-container">
+<canvas id="chart"></canvas>
+</div>
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>RW-Rulindo Agro Market</h3>
+<p>We connect farmers and buyers across Rwanda.</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<p><a href="index.html">Home</a></p>
+<p><a href="login2.html">login</a></p>
+<p><a href="sign up.html">sign up</a></p>
+<p><a href="productshop.html">Shop</a></p>
+<p><a href="service.html">Services</a></p>
+<p><a href="checkautform.html">Order</a></p>
+<p><a href="contact.html">contact</a></p>
+
+</div>
+
+<div>
+<h3>Follow Us</h3>
+
+<div class="social">
+
+<a href="https://facebook.com" class="facebook" target="_blank">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="https://instagram.com" class="instagram" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://twitter.com" class="twitter" target="_blank">
+<i class="fa-brands fa-twitter"></i>
+</a>
+
+<a href="https://wa.me/250788123456" class="whatsapp" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<script>
+const ctx = document.getElementById('chart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+            "Burega","Bushoki","Buyoga","Cyinzuzi","Cyungo",
+            "Kinihira","Kisaro","Masoro","Mbogo","Murambi",
+            "Ngoma","Ntarabana","Rukozo","Rusiga","Shyorongi","Tumba"
+        ],
+        datasets: [
+
+        {
+            label: 'Maize',
+            data: [150,100,120,180,0,200,90,160,0,170,150,80,140,0,160,180],
+            backgroundColor: '#2e7d32'
+        },
+
+        {
+            label: 'Beans',
+            data: [150,80,0,0,200,0,200,0,240,0,110,0,140,290,0,0],
+            backgroundColor: "black"
+        },
+
+        {
+            label: 'Potatoes',
+            data: [0,240,0,0,0,0,200,0,0,0,0,250,0,0,0,0],
+            backgroundColor: '#66bb6a'
+        },
+
+        {
+            label: 'Rice',
+            data: [0,0,0,170,0,0,0,0,0,130,0,0,0,0,0,200],
+            backgroundColor: '#a5d6a7'
+        }
+
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top'
+            }
+        },
+        scales: {
+            x: {
+                stacked: true
+            },
+            y: {
+                stacked: true,
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>

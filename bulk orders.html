@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulk Orders - RW Agro Market</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#e8f5e9;
+}
+
+/* HEADER */
+header{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-left:6px solid #2e7d32;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#1b5e20;
+}
+
+/* INPUTS */
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* BUTTON */
+button{
+    background:#2e7d32;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#1b5e20;
+}
+
+/* SUMMARY */
+.summary{
+    background:#c8e6c9;
+    padding:15px;
+    border-radius:8px;
+}
+
+/* PRODUCT LIST */
+.product-row{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:10px;
+    margin-top:10px;
+}
+
+/* FOOTER */
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<h1>📦 Bulk Orders</h1>
+<p>Order large quantities of farm products 🌾</p>
+</header>
+
+<div class="container">
+
+<!-- CUSTOMER INFO -->
+<div class="card">
+<h2>👤 Customer Information</h2>
+
+<input type="text" id="name" placeholder="Full Name / Company">
+<input type="text" id="phone" placeholder="Phone Number">
+<input type="text" id="location" placeholder="Location (District)">
+
+</div>
+
+<!-- PRODUCTS -->
+<div class="card">
+<h2>🌾 Select Products</h2>
+
+<div class="product-row">
+    <b>Product</b>
+    <b>Quantity (kg)</b>
+    <b>Price/kg</b>
+</div>
+
+<div class="product-row">
+    <select id="product">
+        <option>Maize 🌽</option>
+        <option>Beans 🫘</option>
+        <option>Rice 🍚</option>
+        <option>Potatoes 🥔</option>
+        <option>Vegetables 🥕</option>
+    </select>
+
+    <input type="number" id="qty" placeholder="Qty">
+    <input type="number" id="price" placeholder="Price/kg">
+</div>
+
+<button onclick="calculateTotal()">Calculate Bulk Price</button>
+
+<div class="summary" id="summary">
+Total will appear here...
+</div>
+
+</div>
+
+<!-- DELIVERY -->
+<div class="card">
+<h2>🚚 Delivery Information</h2>
+<p>✔ Delivery within 24–72 hours</p>
+<p>✔ Free delivery for large orders</p>
+<p>✔ Safe transport of agricultural products</p>
+</div>
+
+<!-- CONTACT -->
+<div class="card">
+<h2>📞 Confirm Order</h2>
+
+<button onclick="submitOrder()">Submit Bulk Order</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+© 2026 RW-Rulindo Agro Market | Bulk Orders 📦🌾
+</footer>
+
+<script>
+
+// CALCULATE DISCOUNT + TOTAL
+function calculateTotal(){
+
+    let qty = document.getElementById("qty").value;
+    let price = document.getElementById("price").value;
+
+    let total = qty * price;
+    let discount = 0;
+
+    if(qty >= 200){
+        discount = 0.2; // 20%
+    }
+    else if(qty >= 50){
+        discount = 0.1; // 10%
+    }
+
+    let finalPrice = total - (total * discount);
+
+    document.getElementById("summary").innerHTML =
+    "🧾 Total: " + total + " RWF<br>" +
+    "💰 Discount: " + (discount*100) + "%<br>" +
+    "✔ Final Price: <b>" + finalPrice + " RWF</b>";
+}
+
+// SUBMIT ORDER
+function submitOrder(){
+    alert("✅ Bulk order submitted successfully!\nWe will contact you soon 🚚");
+}
+
+</script>
+
+</body>
+</html>

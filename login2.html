@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Register - Agro Market</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 body{
@@ -19,7 +20,7 @@ body{
 header{
     background:#1b5e20;
     color:white;
-    padding:15px 20px;
+    padding:30px 20px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -88,7 +89,7 @@ footer{
     flex-wrap:wrap;
 }
 
-/* 📱 RESPONSIVE */
+/* RESPONSIVE */
 @media(max-width:768px){
 
     header{
@@ -105,9 +106,11 @@ footer{
     footer{
         flex-direction:column;
         text-align:center;
-        gap:10px;
+        gap:30px;
     }
 }
+
+
 </style>
 
 </head>
@@ -115,21 +118,32 @@ footer{
 <body>
 
 <!-- HEADER -->
-<header>
 
-<h1 style="margin:0; font-size:20px;">
-RW-Rulindo Agro Market
-</h1>
 
-<nav>
+<header class="main-header">
+
+  <div style="display:flex; align-items:center; justify-content:center; gap:10px;">
+    
+    <!-- LOGO -->
+    <img src="agricultural logo.png" 
+         style="width:50px; height:50px; border-radius:50%; background:white; padding:5px;">
+
+    <!-- TITLE -->
+    <h1 style="margin:0;">RW-Rulindo Agro Market</h1>
+
+  </div>
+
+  <!-- MENU ONLY -->
+  <nav class="menu">
 <a href="index.html">Home</a>
-<a href="login.html">Login</a>
+<a href="login2.html">Login</a>
+<p><a href="sign up.html">sign up</a></p>
 <a href="productshop.html">Shop</a>
 <a href="service.html">Services</a>
-<a href="checkautform.html">Checkout</a>
+<a href="checkautform.html">Orders</a>
+<a href="contact.html">Contact</a>
 
-
-</nav>
+  </nav>
 
 </header>
 
@@ -174,9 +188,35 @@ Already have an account?
 <p style="margin:5px 0; font-size:13px;">
 Trusted agricultural marketplace
 </p>
+
+<!-- SOCIAL ICONS -->
+<div style="margin-top:10px; display:flex; gap:10px;">
+
+<a href="https://facebook.com" target="_blank"
+style="padding:10px; background:#3b5998; color:white; border-radius:50%; display:inline-block;">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="https://instagram.com" target="_blank"
+style="padding:10px; background:#E1306C; color:white; border-radius:50%; display:inline-block;">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://twitter.com" target="_blank"
+style="padding:10px; background:#1DA1F2; color:white; border-radius:50%; display:inline-block;">
+<i class="fa-brands fa-twitter"></i>
+</a>
+
+<a href="https://wa.me/250735907160" target="_blank"
+style="padding:10px; background:#25D366; color:white; border-radius:50%; display:inline-block;">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
 </div>
 
-<div style="display:flex; gap:15px; flex-wrap:wrap;">
+</div>
+
+<div>
 <p>Email: info@agromarket.rw</p>
 <p>Tel: +250 735 907 160</p>
 <p>© 2026 All Rights Reserved</p>

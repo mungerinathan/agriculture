@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Order System</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 body{
@@ -19,7 +20,7 @@ body{
 header{
     background:#1b5e20;
     color:white;
-    padding:15px 20px;
+    padding:40px 20px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -111,26 +112,34 @@ footer{
 
 <body>
 
-<!-- HEADER -->
-<header>
 
-<h1 style="margin:0; font-size:20px;">
-RW-Rulindo Agro Market
-</h1>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="login.html">Login</a>
-<a href="productshop.html">Shop</a>
-<a href="service.html">Service</a>
-<a href="checkautform.html">Checkout</a>
+<header class="main-header">
 
-<span>🔍</span>
-<span>🛒</span>
-<span>👤</span>
-</nav>
+  <div style="display:flex; align-items:center; justify-content:center; gap:10px;">
+    
+    <!-- LOGO -->
+    <img src="agricultural logo.png" 
+         style="width:50px; height:50px; border-radius:50%; background:white; padding:5px;">
+
+    <!-- TITLE -->
+    <h1 style="margin:0;">RW-Rulindo Agro Market</h1>
+
+  </div>
+
+  <!-- MENU ONLY -->
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="login2.html">login</a>
+    <a href="productshop.html">shop</a>
+    <a href="service.html">service</a>
+    <a href="checkautform.html">Checkout</a>
+  </nav>
 
 </header>
+
+
+
 
 <!-- BACK BUTTON -->
 <div style="padding:15px;">
@@ -157,7 +166,7 @@ style="padding:10px 20px; background:#2e7d32; color:white; text-decoration:none;
 <!-- ORDER BOX -->
 <div id="orderBox" class="box" style="display:none;">
 
-<h2 style="text-align:center; color:#1b5e20;">Order Form</h2>
+<h2 style="text-align:center; color:hsla(124, 79%, 23%, 0.817);">Order Form</h2>
 
 <input type="text" placeholder="Customer Name">
 <input type="tel" placeholder="Phone Number">
@@ -173,7 +182,7 @@ style="padding:10px 20px; background:#2e7d32; color:white; text-decoration:none;
 
 <button onclick="submitOrder()">Submit</button>
 
-<button onclick="logout()" style="background:red; margin-top:10px;">
+<button onclick="logout()" style="background:hsla(127, 87%, 38%, 0.683); margin-top:10px;">
 Logout
 </button>
 
@@ -182,19 +191,61 @@ Logout
 </div>
 
 <!-- FOOTER -->
-<footer>
+<footer style="background:#1b5e20; color:white; padding:20px; margin-top:auto;">
 
+<div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; align-items:flex-start;">
+
+<!-- BRAND -->
 <div>
-<h3 style="margin:0;">RW-Rulindo Agro Market</h3>
-<p style="margin:5px 0; font-size:13px;">
-Trusted agricultural marketplace
-</p>
+<h3>RW-Rulindo Agro Market</h3>
+<p>We connect farmers and buyers across Rwanda.</p>
 </div>
 
-<div style="display:flex; gap:15px; flex-wrap:wrap;">
-<p>Email: info@agromarket.rw</p>
-<p>Tel: +250 735 907 160</p>
-<p>© 2026 All Rights Reserved</p>
+<!-- LINKS (HORIZONTAL FIX) -->
+<div>
+<h3>Quick Links</h3>
+
+<div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:10px;">
+<a href="index.html" style="color:#c8e6c9; text-decoration:none;">Home</a>
+<a href="login2.html" style="color:#c8e6c9; text-decoration:none;">Login</a>
+<a href="productshop.html" style="color:#c8e6c9; text-decoration:none;">Shop</a>
+<a href="service.html" style="color:#c8e6c9; text-decoration:none;">Service</a>
+<a href="checkautform.html" style="color:#c8e6c9; text-decoration:none;">Orders</a>
+<a href="contact.html" style="color:#c8e6c9; text-decoration:none;">Contact</a>
+</div>
+
+</div>
+
+<!-- SOCIAL ICONS -->
+<div>
+<h3>Follow Us</h3>
+
+<div style="margin-top:10px; display:flex; gap:10px;">
+
+<a href="https://facebook.com" target="_blank"
+style="padding:10px; background:#3b5998; color:white; border-radius:50%; display:inline-block;">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="https://instagram.com" target="_blank"
+style="padding:10px; background:#E1306C; color:white; border-radius:50%; display:inline-block;">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://twitter.com" target="_blank"
+style="padding:10px; background:#1DA1F2; color:white; border-radius:50%; display:inline-block;">
+<i class="fa-brands fa-twitter"></i>
+</a>
+
+<a href="https://wa.me/0735 907 160" target="_blank"
+style="padding:10px; background:#25D366; color:white; border-radius:50%; display:inline-block;">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
 </div>
 
 </footer>

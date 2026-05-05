@@ -4,6 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RW-Rulindo Agro Market</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
 body{
     margin:0;
@@ -18,22 +20,67 @@ body{
 header{
     background:#1b5e20;
     color:white;
-    padding:15px 25px;
+    padding:15px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+/* HEADER CONTENT */
+.header-container{
     display:flex;
     justify-content:space-between;
     align-items:center;
     flex-wrap:wrap;
 }
 
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    border-radius:10px;
+    object-fit:cover;
+}
+
+.logo h1{
+    margin:0;
+    font-size:22px;
+}
+
+.logo p{
+    margin:0;
+    font-size:13px;
+    opacity:0.9;
+}
+
 /* NAV */
 nav{
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:12px;
     flex-wrap:wrap;
 }
 
-/* SERVICES GRID */
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* SERVICES */
 .services{
     padding:40px;
     flex:1;
@@ -46,12 +93,22 @@ nav{
     margin-top:30px;
 }
 
-/* CARD */
 .card{
     background:white;
     padding:20px;
-    border-radius:10px;
+    border-radius:15px;
     box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    background:#e8f5e9;
+}
+
+.grid a{
+    text-decoration:none;
+    color:inherit;
 }
 
 /* FOOTER */
@@ -59,16 +116,12 @@ footer{
     background:#1b5e20;
     color:white;
     padding:20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
+    text-align:center;
 }
 
-/* 📱 RESPONSIVE */
+/* RESPONSIVE */
 @media(max-width:768px){
-
-    header{
+    .header-container{
         flex-direction:column;
         align-items:flex-start;
         gap:10px;
@@ -82,13 +135,6 @@ footer{
     .services{
         padding:20px;
     }
-
-    footer{
-        flex-direction:column;
-        text-align:center;
-        gap:10px;
-    }
-
 }
 </style>
 
@@ -99,38 +145,27 @@ footer{
 <!-- HEADER -->
 <header>
 
-<div style="display:flex; align-items:center; gap:15px; flex-wrap:wrap;">
+<div class="header-container">
 
-<a href="index.html" style="
-background:white;
-color:#1b5e20;
-padding:8px 12px;
-border-radius:5px;
-text-decoration:none;
-font-weight:bold;">
-⬅ Back
-</a>
+    <div class="logo">
+        <img src="agricultural logo.png" alt="logo">
+        <div>
+            <h1>RW-Rulindo Agro Market</h1>
+            <p>Welcome to market for crops and agricultural products</p>
+        </div>
+    </div>
 
-<div>
-<h1 style="margin:0; font-size:20px;">RW-Rulindo Agro Market</h1>
-<p style="margin:0; font-size:12px;">
-Trusted market for crops and agricultural products
-</p>
+    <nav>
+     <a href="index.html">Home</a>
+<a href="login2.html">Login</a>
+<a href="sign up.html">sign up</a>
+<a href="productshop.html">Shop</a>
+<a href="service.html">Services</a>
+<a href="checkautform.html">Orders</a>
+<a href="contact.html">Contact</a>
+    </nav>
+
 </div>
-
-</div>
-
-<nav>
-<a href="index.html" style="color:white;">Home</a>
-<a href="login2.html" style="color:white;">Login</a>
-<a href="productshop.html" style="color:white;">Shop</a>
-<a href="service.html" style="color:white;">Service</a>
-<a href="checkautform.html" style="color:white;">Checkout</a>
-
-<span>🔍</span>
-<span>🛒</span>
-<span>👤</span>
-</nav>
 
 </header>
 
@@ -141,35 +176,47 @@ Trusted market for crops and agricultural products
 
 <div class="grid">
 
+<a href="productshop.html">
 <div class="card">
 <h3>🌾 Farm Products Sales</h3>
 <p>We help farmers sell fresh agricultural products directly to customers.</p>
 </div>
+</a>
 
+<a href="derivery.html">
 <div class="card">
 <h3>🚚 Delivery Services</h3>
 <p>Fast and reliable delivery of farm products to your location.</p>
 </div>
+</a>
 
+<a href="FARMER SUPPORT.html">
 <div class="card">
 <h3>👨‍🌾 Farmer Support</h3>
 <p>We support farmers to reach markets and grow their businesses.</p>
 </div>
+</a>
 
+<a href="eas.html">
 <div class="card">
-<h3>Easy Payments</h3>
+<h3>💳 Easy Payments</h3>
 <p>Secure and easy payment methods including Mobile Money.</p>
 </div>
+</a>
 
+<a href="bulk-orders.html">
 <div class="card">
-<h3> Bulk Orders</h3>
+<h3>📦 Bulk Orders</h3>
 <p>Order large quantities for businesses, restaurants, and shops.</p>
 </div>
+</a>
 
+<a href="market information.html">
 <div class="card">
-<h3> Market Information</h3>
+<h3>📊 Market Information</h3>
 <p>Get updated prices and market trends for farm products.</p>
 </div>
+</a>
 
 </div>
 
@@ -178,18 +225,9 @@ Trusted market for crops and agricultural products
 <!-- FOOTER -->
 <footer>
 
-<div>
-<h3 style="margin:0;">RW-Rulindo Agro Market</h3>
-<p style="margin:5px 0; font-size:13px;">
-Trusted agricultural marketplace
-</p>
-</div>
-
-<div style="display:flex; gap:15px; flex-wrap:wrap;">
-<p>Email: info@agromarket.rw</p>
-<p>Tel: +250 735 907 160</p> 
+<h3>RW-Rulindo Agro Market</h3>
+<p>Trusted agricultural marketplace 🌾</p>
 <p>© 2026 All Rights Reserved</p>
-</div>
 
 </footer>
 

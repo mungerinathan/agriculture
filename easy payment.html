@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Payment - RW Agro Market</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#e8f5e9;
+}
+
+/* ===== HEADER ===== */
+header{
+    background:#1b5e20;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+}
+
+.logo-text h1{
+    margin:0;
+    font-size:20px;
+}
+
+.logo-text p{
+    margin:3px 0 0 0;
+    font-size:12px;
+    color:#c8e6c9;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:5px;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-left:6px solid #2e7d32;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#1b5e20;
+}
+
+/* INPUTS */
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* BUTTON */
+button{
+    background:#2e7d32;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#1b5e20;
+}
+
+/* SUMMARY */
+.summary{
+    background:#c8e6c9;
+    padding:15px;
+    border-radius:8px;
+}
+
+/* FOOTER */
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+    }
+
+    nav{
+        justify-content:center;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+
+  <div class="logo">
+
+    <img src="agricultural logo.png">
+
+    <div class="logo-text">
+      <h1>RW-Rulindo Agro Market</h1>
+      <p>Easy & Secure Payment System 💳🌾</p>
+    </div>
+
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="login2.html">Login</a>
+    <a href="productshop.html">Shop</a>
+    <a href="service.html">Services</a>
+    <a href="checkautform.html">Orders</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+</header>
+
+<!-- ===== CONTENT ===== -->
+<div class="container">
+
+<!-- ORDER DETAILS -->
+<div class="card">
+<h2>🛒 Order Details</h2>
+
+<input type="text" id="product" placeholder="Product (e.g. Maize)">
+<input type="number" id="qty" placeholder="Quantity (kg)">
+<input type="number" id="price" placeholder="Price per kg (RWF)">
+
+<button onclick="calculateTotal()">Calculate Total</button>
+
+<div class="summary" id="summary">
+Total will appear here...
+</div>
+
+</div>
+
+<!-- PAYMENT METHOD -->
+<div class="card">
+<h2>📱 Payment Method</h2>
+
+<select id="method">
+<option>MTN Mobile Money</option>
+<option>Airtel Money</option>
+<option>Cash on Delivery</option>
+<option>Bank Transfer</option>
+</select>
+
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Phone Number">
+<input type="text" placeholder="Location">
+
+<button onclick="confirmPayment()">Confirm Payment</button>
+
+</div>
+
+<!-- INFO -->
+<div class="card">
+<h2>📞 Payment Instructions</h2>
+
+<p>📱 MTN MoMo: Dial *182#</p>
+<p>🏦 Pay to: RW Agro Market Account</p>
+<p>🚚 Delivery after payment confirmation</p>
+
+</div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+© 2026 RW-Rulindo Agro Market | Easy Payment System 💳🌾
+</footer>
+
+<script>
+
+// CALCULATE TOTAL
+function calculateTotal(){
+    let qty = document.getElementById("qty").value;
+    let price = document.getElementById("price").value;
+
+    let total = qty * price;
+
+    document.getElementById("summary").innerHTML =
+    "🛒 Total Price: <b>" + total + " RWF</b>";
+}
+
+// CONFIRM PAYMENT
+function confirmPayment(){
+    alert("✅ Payment sent successfully!\nWe will contact you soon 🚚");
+}
+
+</script>
+
+</body>
+</html>
