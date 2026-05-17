@@ -3,28 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Farmer Upload Product - RW Agro Market</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
-/* BODY */
+/* ===== BODY ===== */
 body{
     margin:0;
-    font-family:Arial;
+    font-family:Arial, sans-serif;
     background:#e8f5e9;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
     background:#1b5e20;
     color:white;
-    padding:15px;
-    position:sticky;
-    top:0;
-    z-index:1000;
+    padding:20px 25px;
 }
 
 .header-container{
@@ -40,170 +34,147 @@ header{
 .logo{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:15px;
 }
 
 .logo img{
-    width:60px;
-    height:60px;
-    border-radius:10px;
+    width:85px;
+    height:85px;
+    border-radius:50%;
     background:white;
     object-fit:cover;
 }
 
-.logo h1{
+.logo h3{
     margin:0;
-    font-size:20px;
+    font-size:24px;
 }
 
-/* NAV */
+.logo small{
+    font-size:14px;
+}
+
+/* MENU */
 nav{
     display:flex;
-    gap:10px;
+    gap:12px;
     flex-wrap:wrap;
 }
 
 nav a{
     color:white;
     text-decoration:none;
+    font-size:17px;
     font-weight:bold;
-    padding:6px 10px;
-    border-radius:5px;
+    padding:10px 14px;
+    border-radius:6px;
+    transition:0.3s;
 }
 
 nav a:hover{
     background:rgba(255,255,255,0.2);
 }
 
-/* CONTAINER */
+/*  MAIN  */
 .container{
     width:90%;
-    max-width:900px;
+    max-width:650px;
     margin:auto;
     padding:20px;
+}
+
+/* SHOW USER */
+#showUser{
+    color:#2e7d32;
+    text-align:center;
+    font-size:24px;
+    margin-bottom:15px;
 }
 
 /* CARD */
 .card{
     background:white;
-    padding:20px;
-    margin-top:20px;
-    border-left:6px solid #2e7d32;
+    padding:15px;
+    margin-top:15px;
     border-radius:10px;
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-h2{
-    color:#1b5e20;
+/* GREEN HEADINGS */
+.card h3{
+    color:#2e7d32;
+    margin-bottom:5px;
 }
 
 /* INPUTS */
 input, textarea, select{
     width:100%;
     padding:10px;
-    margin-top:10px;
-    border-radius:5px;
+    margin-top:5px;
     border:1px solid #ccc;
-}
-
-/* IMAGE */
-#preview{
-    width:100%;
-    max-height:250px;
-    object-fit:cover;
-    margin-top:10px;
-    border-radius:10px;
-    display:none;
+    border-radius:6px;
+    box-sizing:border-box;
+    font-size:15px;
 }
 
 /* BUTTON */
 button{
     background:#2e7d32;
     color:white;
-    padding:10px 20px;
+    padding:12px;
+    width:100%;
     border:none;
-    border-radius:5px;
-    cursor:pointer;
+    border-radius:6px;
     margin-top:10px;
+    cursor:pointer;
+    font-size:16px;
 }
 
 button:hover{
     background:#1b5e20;
 }
 
-/* VIEW ORDERS BUTTON */
-.green-btn{
-    background:#2e7d32;
-    color:white;
-    padding:14px 28px;
-    border-radius:10px;
-    font-size:16px;
-    font-weight:bold;
-    text-decoration:none;
-    display:inline-block;
-    transition:0.3s;
-    margin-top:20px;
+/* IMAGE */
+#preview{
+    width:100%;
+    max-height:220px;
+    object-fit:cover;
+    margin-top:10px;
+    display:none;
+    border-radius:8px;
 }
 
-.green-btn:hover{
-    background:#1b5e20;
-    transform:scale(1.05);
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer{
     background:#1b5e20;
     color:white;
-    padding:30px 15px;
-    margin-top:40px;
+    margin-top:30px;
+    padding:20px;
 }
 
-.footer-grid{
-    max-width:1100px;
+.footer-container{
+    max-width:1000px;
     margin:auto;
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
     gap:20px;
 }
 
-.footer-grid a{
+.footer-box h3{
+    margin-top:0;
+}
+
+.footer-box a{
     color:white;
     text-decoration:none;
     display:block;
     margin:5px 0;
 }
 
-.footer-grid a:hover{
+.footer-box a:hover{
     text-decoration:underline;
 }
 
-/* SOCIAL */
-.social{
-    display:flex;
-    gap:10px;
-    margin-top:10px;
-
-      
-}
-
-.social a{
-    width:35px;
-    height:35px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:rgba(255,255,255,0.2);
-    color:white;
-    text-decoration:none;
-}
-
-.social a:hover{
-    background:white;
-    color:#1b5e20;
-}
-
-/* BOTTOM */
 .bottom{
     text-align:center;
     margin-top:20px;
@@ -211,144 +182,226 @@ footer{
     opacity:0.8;
 }
 
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .header-container{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .logo{
+        flex-direction:column;
+    }
+
+    .logo img{
+        width:70px;
+        height:70px;
+    }
+
+    nav a{
+        font-size:15px;
+        padding:8px 10px;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header>
 
 <div class="header-container">
 
-<div class="logo">
-<img src="agricultural logo.png">
-<h1>RW-Rulindo Agro Market</h1>
-</div>
+    <div class="logo">
+        <a href="index.html"><img src="agricultural logo.png"></a>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="login2.html">Login</a>
-<a href="productshop.html">Shop</a>
-<a href="service.html">Services</a>
-<a href="checkautform.html">Orders</a>
-<a href="contact.html">Contact</a>
-<a href="sign up.html">Sign Up</a>
-</nav>
+        <div>
+            <h3>RW-Rulindo Agro Market</h3>
+            <small>Farmer Upload System</small>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login2.html">Login</a>
+        <a href="sign up.html">Sign Up</a>
+        <a href="productshop.html">Shop</a>
+        <a href="service.html">Services</a>
+        <a href="checkautform.html">Orders</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
 </div>
 
 </header>
 
-<!-- CONTENT -->
+<!-- ================= MAIN ================= -->
 <div class="container">
 
-<!-- PRODUCT FORM -->
+<h3 id="showUser"></h3>
+
 <div class="card">
-<h2>📦 Product Details</h2>
 
-<input type="text" id="name" placeholder="Product Name">
-<textarea id="desc" rows="3" placeholder="Product Description"></textarea>
+    <h3>Product Name</h3>
+    <input type="text" id="name">
 
-<input type="number" id="price" placeholder="Price per kg (RWF)">
-<input type="number" id="qty" placeholder="Quantity available (kg)">
+    <h3>Description</h3>
+    <textarea id="desc"></textarea>
 
-<select id="category">
-<option>Grains 🌾</option>
-<option>Vegetables 🥕</option>
-<option>Fruits 🍎</option>
-<option>Other</option>
-</select>
+    <h3>Price</h3>
+    <input type="number" id="price">
 
-<input type="text" id="location" placeholder="Location (District)">
+    <h3>Quantity</h3>
+    <input type="number" id="qty">
+
+    <h3>Category</h3>
+    <select id="category">
+        <option>Grains</option>
+        <option>Vegetables</option>
+        <option>Fruits</option>
+    </select>
+
+    <h3>Location</h3>
+    <input type="text" id="location">
+
 </div>
 
-<!-- IMAGE -->
 <div class="card">
-<h2>📸 Upload Image</h2>
 
-<input type="file" accept="image/*" onchange="previewImage(event)">
-<img id="preview">
+    <h3>Upload Image</h3>
+
+    <input type="file"
+           id="file"
+           accept="image/*"
+           onchange="previewImage(event)">
+
+    <img id="preview">
+
 </div>
 
-<!-- SUBMIT -->
 <div class="card">
-<h2>🚀 Submit Product</h2>
-<button onclick="submitProduct()">Upload Product</button>
 
-<br>
-
-
-
+    <button onclick="submitProduct()">
+        Upload Product
+    </button>
 
 </div>
 
 </div>
 
-<!-- VIEW ORDERS BUTTON -->
-<a href="view order.html" class="green-btn">
-View Orders
-</a>
-
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer>
 
-<div class="footer-grid">
+<div class="footer-container">
 
-<div>
-<h3>RW-Rulindo Agro Market</h3>
-<p>We connect farmers and buyers across Rwanda.</p>
-</div>
+    <div class="footer-box">
+        <h3>RW-Rulindo Agro Market</h3>
+        <p>Connecting farmers and buyers in Rwanda.</p>
+    </div>
 
-<div>
-<h3>Quick Links</h3>
-<a href="index.html">Home</a>
-<a href="login2.html">Login</a>
-<a href="productshop.html">Shop</a>
-<a href="service.html">Services</a>
-<a href="checkautform.html">Orders</a>
-<a href="contact.html">Contact</a>
-</div>
+    <div class="footer-box">
+        <h3>Quick Links</h3>
 
-<div>
-<h3>Follow Us</h3>
-
-<div class="social">
-<a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-<a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-<a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
-<a href="https://wa.me/250788123456"><i class="fa-brands fa-whatsapp"></i></a>
-</div>
-
-</div>
+        <a href="index.html">Home</a>
+        <a href="productshop.html">Shop</a>
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
 </div>
 
 <div class="bottom">
-© 2026 RW-Rulindo Agro Market 🌾
+    © 2026 RW-Rulindo Agro Market
 </div>
 
 </footer>
 
+<!-- ================= JAVASCRIPT ================= -->
 <script>
 
-// IMAGE PREVIEW
+/* SHOW LOGGED IN USER */
+window.onload = function(){
+
+    let user = localStorage.getItem("currentUser");
+
+    if(user){
+        document.getElementById("showUser").innerText =
+        "Welcome " + user;
+    }else{
+        document.getElementById("showUser").innerText =
+        "Welcome Guest";
+    }
+
+};
+
+/* IMAGE PREVIEW */
 function previewImage(event){
-    let image = document.getElementById("preview");
-    image.src = URL.createObjectURL(event.target.files[0]);
-    image.style.display = "block";
+
+    let img = document.getElementById("preview");
+
+    img.src = URL.createObjectURL(event.target.files[0]);
+
+    img.style.display = "block";
 }
 
-// SUBMIT
+/* SUBMIT PRODUCT */
 function submitProduct(){
-    let name = document.getElementById("name").value;
 
-    if(name === ""){
-        alert("❌ Please fill product name");
+    let file = document.getElementById("file").files[0];
+
+    let name = document.getElementById("name").value;
+    let desc = document.getElementById("desc").value;
+    let price = document.getElementById("price").value;
+    let qty = document.getElementById("qty").value;
+    let category = document.getElementById("category").value;
+    let location = document.getElementById("location").value;
+
+    if(name === "" || !file){
+
+        alert("Fill all required fields");
+
         return;
     }
 
-    alert("✅ Product uploaded successfully!");
+    let reader = new FileReader();
+
+    reader.onload = function(){
+
+        let product = {
+
+            name:name,
+            desc:desc,
+            price:price,
+            qty:qty,
+            category:category,
+            location:location,
+            image:reader.result
+        };
+
+        let products =
+        JSON.parse(localStorage.getItem("products")) || [];
+
+        products.push(product);
+
+        localStorage.setItem(
+            "products",
+            JSON.stringify(products)
+        );
+
+        alert("Product uploaded successfully!");
+
+        window.location.href = "productshop.html";
+    };
+
+    reader.readAsDataURL(file);
 }
 
 </script>

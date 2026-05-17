@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+
 body{
     margin:0;
     font-family:Arial;
@@ -41,7 +42,7 @@ header{
 .logo img{
     width:60px;
     height:60px;
-    border-radius:10px;
+    border-radius:50%;
     object-fit:cover;
 }
 
@@ -77,64 +78,49 @@ nav a:hover{
 /* FORM */
 .container{
     width:90%;
-    max-width:500px;
-    margin:20px auto;
+    max-width:400px;
+    margin:40px auto;
     background:white;
-    padding:20px;
+    padding:25px;
     border-radius:10px;
     box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
-input, textarea{
+.container h2{
+    text-align:center;
+    color:#1b5e20;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+    color:#1b5e20;
+    font-weight:bold;
+}
+
+input{
     width:100%;
-    padding:10px;
-    margin:8px 0;
+    padding:12px;
     border:1px solid #ccc;
     border-radius:5px;
+    margin-bottom:15px;
 }
 
 button{
     width:100%;
-    padding:10px;
+    padding:12px;
     background:green;
     color:white;
     border:none;
     border-radius:5px;
     cursor:pointer;
+    font-size:16px;
 }
 
 button:hover{
     background:darkgreen;
-}
-
-/* CARD */
-.card{
-    width:90%;
-    max-width:500px;
-    margin:20px auto;
-    background:white;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
-}
-
-.product-img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    border-radius:10px;
-    margin:10px 0;
-}
-
-.price{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-weight:bold;
-}
-
-.price img{
-    width:22px;
 }
 
 /* FOOTER */
@@ -194,10 +180,12 @@ footer{
 
 <!-- HEADER -->
 <header>
+
 <div class="header-container">
 
     <div class="logo">
         <img src="agricultural logo.png">
+
         <div>
             <h1>RW-Rulindo Agro Market</h1>
             <p>Market for crops & agricultural products</p>
@@ -205,50 +193,59 @@ footer{
     </div>
 
     <nav>
-       <a href="index.html">Home</a>
-<a href="login2.html">Login</a>
-<a href="sign up.html">sign up</a>
-<a href="productshop.html">Shop</a>
-<a href="service.html">Services</a>
-<a href="checkautform.html">Orders</a>
-<a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="login2.html">Login</a>
+        <a href="sign up.html">Sign Up</a>
+        <a href="productshop.html">Shop</a>
+        <a href="service.html">Services</a>
+        <a href="checkautform.html">Orders</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
 </div>
+
 </header>
 
-<!-- FARMER FORM -->
+<!-- REGISTER FORM -->
 <div class="container">
-    <h3>🌾 Register Farmer</h3>
 
-    <input type="text" id="name" placeholder="Farmer Name">
-    <input type="text" id="location" placeholder="Location">
-    <input type="text" id="product" placeholder="Product Name">
-    <input type="text" id="image" placeholder="Product Image URL">
-    <input type="number" id="price" placeholder="Price (RWF)">
-    <textarea id="bio" placeholder="Farmer Description"></textarea>
+    <h2>Create Account</h2>
 
-    <button onclick="submitData()">Submit</button>
+    <label>User Name</label>
+    <input type="text" id="regUser" placeholder="Enter new username">
+
+    <label>Password</label>
+    <input type="password" id="regPass" placeholder="Enter new password">
+
+    <button onclick="register()">
+        Register
+    </button>
+
 </div>
 
-<!-- OUTPUT -->
-<div id="output"></div>
+<!-- JAVASCRIPT -->
 <script>
-function submitData(){
 
-    let name = document.getElementById("name").value;
+function register(){
 
-    if(name == ""){
-        alert("Andika izina!");
+    let user = document.getElementById("regUser").value;
+    let pass = document.getElementById("regPass").value;
+
+    if(user === "" || pass === ""){
+        alert("Fill all fields");
         return;
     }
 
-    // example save
-    localStorage.setItem("name", name);
+    // SAVE ACCOUNT
+    localStorage.setItem("user", user);
+    localStorage.setItem("pass", pass);
 
-    // then redirect
+    alert("Registration successful!");
+
+    // REDIRECT TO LOGIN PAGE
     window.location.href = "login2.html";
 }
+
 </script>
 
 <!-- FOOTER -->
@@ -263,6 +260,7 @@ function submitData(){
 
     <div>
         <h3>Quick Links</h3>
+
         <a href="index.html">Home</a>
         <a href="login2.html">Login</a>
         <a href="productshop.html">Shop</a>
@@ -276,10 +274,21 @@ function submitData(){
 
         <div class="social">
 
-            <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://wa.me/250788123456"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://facebook.com">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://instagram.com">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://twitter.com">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="https://wa.me/250788123456">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
 
         </div>
 
@@ -288,7 +297,7 @@ function submitData(){
 </div>
 
 <div style="text-align:center; margin-top:20px; font-size:14px; opacity:0.8;">
-© 2026 RW-Rulindo Agro Market
+    © 2026 RW-Rulindo Agro Market
 </div>
 
 </footer>

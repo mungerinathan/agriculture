@@ -5,7 +5,7 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
         function sendMessage() {
             let name = document.getElementById("name").value;
@@ -20,24 +20,192 @@
             alert("Message sent successfully! Thank you " + name);
         }
     </script>
+<style>
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+}
+
+/* HEADER */
+header{
+    background:#1b5e20;
+    color:white;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo a{
+    text-decoration:none;
+}
+
+.logo img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+    object-fit:cover;
+}
+
+.logo h1{
+    margin:0;
+    font-size:28px;
+}
+
+.logo p{
+    margin:0;
+    font-size:13px;
+}
+
+/* NAVIGATION */
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:6px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav .active{
+    background:white;
+    color:#1b5e20;
+}
+
+/* FOOTER */
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer h2{
+    margin-bottom:10px;
+}
+
+footer p{
+    margin:5px 0;
+}
+
+/* SOCIAL ICONS */
+.social{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.social a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:20px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.facebook{
+    background:#1877f2;
+}
+
+.instagram{
+    background:#e1306c;
+}
+
+.twitter{
+    background:black;
+}
+
+.whatsapp{
+    background:#25d366;
+}
+
+.social a:hover{
+    transform:scale(1.1);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    text-align:center;
+}
+
+nav{
+    justify-content:center;
+    margin-top:15px;
+}
+
+.logo{
+    flex-direction:column;
+}
+
+.logo h1{
+    font-size:22px;
+}
+
+}
+
+</style>
+
+</style>
+
+
 </head>
 
 <body style="margin:0; font-family:Arial, sans-serif;">
 
 <!-- HEADER -->
-<header style="display:flex; justify-content:space-between; align-items:center; background:#0aa851; padding:40px 40px;">
+<header>
 
-    <div style="color:white; font-size:22px; font-weight:bold;">
-        RW-Rulindo Agro Market
-    </div>
+<div class="logo">
 
-    <ul style="list-style:none; display:flex; gap:25px; margin:0; padding:0;">
-        <li><a href="index.html" style="text-decoration:none; color:white; font-weight:bold;">Home</a></li>
-        <li><a href="login2.html" style="text-decoration:none; color:white; font-weight:bold;">login2</a></li>
-        <li><a href="productshop.html" style="text-decoration:none; color:white; font-weight:bold;">products</a></li>
-        <li><a href="service.html" style="text-decoration:none; color:white; font-weight:bold;">services</a></li>
-        <li><a href="checkautform.html" style="text-decoration:none; color:white; font-weight:bold;">Checkout</a></li>
-    </ul>
+ <a href="index.html"><img src="agricultural logo.png" alt="Logo"></a>
+
+<div>
+<h1>RW-Rulindo Agro Market</h1>
+<p>Welcome to market for crops and agricultural products</p>
+</div>
+
+</div>
+
+<nav>
+<a href="index.html" class="active">Home</a>
+<a href="login2.html">Login</a>
+<a href="sign up.html">Sign Up</a>
+<a href="productshop.html">Shop</a>
+<a href="service.html">Services</a>
+<a href="checkautform.html">Orders</a>
+<a href="contact.html">Contact</a>
+</nav>
 
 </header>
 
@@ -82,42 +250,35 @@
 </section>
 
 <!-- FOOTER -->
-<footer style="background:#0aa851; color:white; 
+<footer>
 
-text-align:center; padding:20px;">
+<h2>RW-Rulindo Agro Market</h2>
 
-    <p>Email: info@agromarket.rw</p>
-    <p>Tel: +250 735 907 160</p>
-    <p>© 2026 RW-Rulindo Agro Market</p>
+<p>We connect farmers and buyers across Rwanda.</p>
 
-    <!-- SOCIAL ICONS -->
-    <div style="margin-top:10px;">
+<div class="social">
 
-        <a href="#" style="margin:5px; padding:12px; background:#3b5998;
-        
-        color:white; border-radius:50%; display:inline-block;">
-            <i class="fa fa-facebook"></i>
-        </a>
+<a href="https://facebook.com" class="facebook" target="_blank">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
 
-        <a href="#" style="margin:5px; padding:12px; background:#E1306C;
-        
-        color:white; border-radius:50%; display:inline-block;">
-            <i class="fa fa-instagram"></i>
-        </a>
+<a href="https://instagram.com" class="instagram" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
 
-        <a href="#" style="margin:5px; padding:12px; background:#1DA1F2;
-        
-        color:white; border-radius:50%; display:inline-block;">
-            <i class="fa fa-twitter"></i>
-        </a>
+<a href="https://twitter.com" class="twitter" target="_blank">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
 
-        <a href="https://wa.me/250 735 907 160" style="margin:5px; padding:12px;
-        
-        background:#25D366; color:white; border-radius:50%; display:inline-block;">
-            <i class="fa fa-whatsapp"></i>
-        </a>
+<a href="https://wa.me/250735907160" class="whatsapp" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
 
-    </div>
+</div>
+
+<p style="margin-top:15px;">
+© 2026 RW-Rulindo Agro Market
+</p>
 
 </footer>
 

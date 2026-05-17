@@ -4,33 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Order System</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-body{
-    font-family: Arial;
-    background:#eaf7ea;
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
     margin:0;
-    display:flex;
-    flex-direction:column;
-    min-height:100vh;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
-/* HEADER */
+body{
+    background:#eaf7ea;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 header{
     background:#1b5e20;
     color:white;
-    padding:40px 20px;
+    padding:18px 25px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     flex-wrap:wrap;
+    box-shadow:0 3px 10px rgba(0,0,0,0.2);
 }
 
-/* NAV */
+header h1{
+    font-size:22px;
+}
+
 nav{
     display:flex;
-    align-items:center;
     gap:15px;
     flex-wrap:wrap;
 }
@@ -38,126 +56,238 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
+    padding:8px 12px;
+    border-radius:5px;
+    transition:0.3s;
 }
 
-/* MAIN CENTER */
+nav a:hover{
+    background:white;
+    color:#1b5e20;
+}
+
+/* =========================
+   MAIN AREA
+========================= */
+
 .main{
+    flex:1;
     display:flex;
     justify-content:center;
     align-items:center;
-    flex:1;
     padding:20px;
 }
 
-/* BOXES */
+/* =========================
+   FORM BOX
+========================= */
+
 .box{
     background:white;
-    padding:20px;
-    border-radius:10px;
     width:100%;
-    max-width:320px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    max-width:380px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
 
-/* INPUTS */
-input, select, button{
+/* =========================
+   INPUTS
+========================= */
+
+input,
+select{
     width:100%;
-    padding:10px;
-    margin:6px 0;
-    box-sizing:border-box;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    transition:0.3s;
 }
 
-/* BUTTON */
+input:focus,
+select:focus{
+    border-color:#1b5e20;
+    box-shadow:0 0 5px rgba(27,94,32,0.3);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
 button{
+    width:100%;
+    padding:12px;
     background:#1b5e20;
     color:white;
     border:none;
+    border-radius:6px;
     cursor:pointer;
+    font-size:15px;
+    transition:0.3s;
 }
 
-/* FOOTER */
+button:hover{
+    background:#2e7d32;
+}
+
+/* =========================
+   IMAGE PREVIEW FIX
+========================= */
+
+#previewImage{
+    width:250px;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    border:2px solid #1b5e20;
+}
+
+/* wrapper optional */
+.image-wrapper{
+    width:250px;
+    height:200px;
+    overflow:hidden;
+    margin:auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
     background:#1b5e20;
     color:white;
+    text-align:center;
     padding:20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
+    margin-top:auto;
 }
 
-/* 📱 RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media(max-width:768px){
 
     header{
         flex-direction:column;
-        align-items:flex-start;
+        text-align:center;
         gap:10px;
     }
 
     nav{
-        width:100%;
         justify-content:center;
     }
 
-    footer{
-        flex-direction:column;
-        text-align:center;
-        gap:10px;
+    .box{
+        width:95%;
     }
 }
-</style>
 
+/* FOOTER GRID */
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    background:#1b5e20;
+    color:white;
+    padding:30px 20px;
+}
+
+/* FOOTER BOX */
+.footer-box h3{
+    margin-bottom:10px;
+}
+
+.footer-box p{
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* LINKS */
+.footer-box a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:6px 0;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.footer-box a:hover{
+    color:#c8e6c9;
+    transform:translateX(5px);
+}
+
+/* SOCIAL */
+.social{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.social a{
+    width:40px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social a:hover{
+    transform:scale(1.1);
+}
+
+.facebook{background:#1877F2;}
+.instagram{background:#E1306C;}
+.twitter{background:#1DA1F2;}
+.whatsapp{background:#25D366;}
+
+/* COPYRIGHT */
+footer .copyright{
+    text-align:center;
+    padding:15px;
+    background:#145a18;
+    color:white;
+    font-size:14px;
+}
+</style>
 </head>
 
 <body>
 
+<header>
 
+<div style="display:flex; align-items:center; gap:10px;">
+<img src="agricultural logo.png"
+style="width:50px;height:50px;border-radius:50%;">
 
-<header class="main-header">
+<h1 style="margin:0;">RW-Rulindo Agro Market</h1>
+</div>
 
-  <div style="display:flex; align-items:center; justify-content:center; gap:10px;">
-    
-    <!-- LOGO -->
-    <img src="agricultural logo.png" 
-         style="width:50px; height:50px; border-radius:50%; background:white; padding:5px;">
-
-    <!-- TITLE -->
-    <h1 style="margin:0;">RW-Rulindo Agro Market</h1>
-
-  </div>
-
-  <!-- MENU ONLY -->
-  <nav class="menu">
-     <a href="index.html">Home</a>
+<nav>
+<a href="index.html">Home</a>
 <a href="login2.html">Login</a>
-<a href="sign up.html">sign up</a>
-<a href="productshop.html">Shop</a>  
+<a href="sign up.html">Sign Up</a>
+<a href="productshop.html">Shop</a>
 <a href="service.html">Services</a>
-<a href="checkautform.html">Orders</a>
+<a href="view order.html">Orders</a>
 <a href="contact.html">Contact</a>
-  </nav>
+</nav>
 
 </header>
 
-
-
-
-<!-- BACK BUTTON -->
-<div style="padding:15px;">
-<a href="index.html" 
-style="padding:10px 20px; background:#2e7d32; color:white; text-decoration:none; border-radius:5px;">
-⬅ Back to Home
-</a>
-</div>
-
-<!-- MAIN -->
 <div class="main">
 
 <!-- LOGIN BOX -->
 <div id="loginBox" class="box">
 
-<h2 style="text-align:center; color:#1b5e20;">Login</h2>
+<h2 style="text-align:center;color:#1b5e20;">Login</h2>
 
 <input id="username" type="text" placeholder="Enter Name">
 
@@ -168,124 +298,223 @@ style="padding:10px 20px; background:#2e7d32; color:white; text-decoration:none;
 <!-- ORDER BOX -->
 <div id="orderBox" class="box" style="display:none;">
 
-<h2 style="text-align:center; color:hsla(124, 79%, 23%, 0.817);">Order Form</h2>
+<h2 style="text-align:center;color:#1b5e20;">Order Form</h2>
 
-<input type="text" placeholder="Customer Name">
-<input type="tel" placeholder="Phone Number">
-<input type="text" placeholder="Delivery Address">
-<input type="date">
+<input id="customerName" type="text" placeholder="Customer Name">
 
-<select>
+<input id="phone" type="tel" placeholder="Phone Number">
+
+<input id="address" type="text" placeholder="Delivery Address">
+
+<input id="quantity" type="number" placeholder="Quantity / KG" min="1">
+
+<select id="productImage" onchange="showImage()">
+
+<option value="">Select Product Image</option>
+
+<option value="100.jfif">Apple</option>
+<option value="3.jfif">Banana</option>
+<option value="14.jfif">Potatoes</option>
+<option value="6.jfif">Avocado</option>
+<option value="7.jfif">Onion</option>
+<option value="8.jfif">Carrots</option>
+<option value="9.jfif">Vegetables</option>
+<option value="10.jfif">Pineapple</option>
+<option value="13.jfif">Mushroom</option>
+<option value="5.jfif">Beans</option>
+<option value="20.jfif">Eggs</option>
+<option value="18.jfif">Meat</option>
+<option value="4.jfif">Maize</option>
+<option value="17.jfif">Milk</option>
+<option value="16.jfif">Cassava Leaves</option>
+
+</select>
+
+<div style="text-align:center;margin-top:10px;">
+<img id="previewImage"
+style="width:100%;max-width:250px;height:200px;
+object-fit:cover;border-radius:10px;
+border:2px solid #2e7d32;display:none;">
+</div>
+
+<input id="date" type="date">
+
+<select id="payment">
 <option>Select Payment Method</option>
 <option>Cash</option>
 <option>Mobile Money</option>
 <option>Card</option>
 </select>
 
-<button onclick="submitOrder()">Submit</button>
+<button onclick="submitOrder()">Submit Order</button><br><br><br>
 
-<button onclick="logout()" style="background:hsla(127, 87%, 38%, 0.683); margin-top:10px;">
-Logout
-</button>
-
-</div>
-
-</div>
-
-<!-- FOOTER -->
-<footer style="background:#1b5e20; color:white; padding:20px; margin-top:auto;">
-
-<div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; align-items:flex-start;">
-
-<!-- BRAND -->
-<div>
-<h3>RW-Rulindo Agro Market</h3>
-<p>We connect farmers and buyers across Rwanda.</p>
-</div>
-
-<!-- LINKS (HORIZONTAL FIX) -->
-<div>
-<h3>Quick Links</h3>
-
-<div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:10px;">
-<a href="index.html" style="color:#c8e6c9; text-decoration:none;">Home</a>
-<a href="login2.html" style="color:#c8e6c9; text-decoration:none;">Login</a>
-<a href="productshop.html" style="color:#c8e6c9; text-decoration:none;">Shop</a>
-<a href="service.html" style="color:#c8e6c9; text-decoration:none;">Service</a>
-<a href="checkautform.html" style="color:#c8e6c9; text-decoration:none;">Orders</a>
-<a href="contact.html" style="color:#c8e6c9; text-decoration:none;">Contact</a>
-</div>
-
-</div>
-
-<!-- SOCIAL ICONS -->
-<div>
-<h3>Follow Us</h3>
-
-<div style="margin-top:10px; display:flex; gap:10px;">
-
-<a href="https://facebook.com" target="_blank"
-style="padding:10px; background:#3b5998; color:white; border-radius:50%; display:inline-block;">
-<i class="fa-brands fa-facebook-f"></i>
-</a>
-
-<a href="https://instagram.com" target="_blank"
-style="padding:10px; background:#E1306C; color:white; border-radius:50%; display:inline-block;">
-<i class="fa-brands fa-instagram"></i>
-</a>
-
-<a href="https://twitter.com" target="_blank"
-style="padding:10px; background:#1DA1F2; color:white; border-radius:50%; display:inline-block;">
-<i class="fa-brands fa-twitter"></i>
-</a>
-
-<a href="https://wa.me/0735 907 160" target="_blank"
-style="padding:10px; background:#25D366; color:white; border-radius:50%; display:inline-block;">
-<i class="fa-brands fa-whatsapp"></i>
-</a>
+<button onclick="logout()"
+style="background:#c62828;">Logout</button>
 
 </div>
 
 </div>
+<footer>
+
+<div class="footer-grid">
+
+    <!-- ABOUT -->
+    <div class="footer-box">
+        <h3>RW-Rulindo Agro Market</h3>
+        <p>
+            We connect farmers and buyers across Rwanda.
+            Fast, reliable and trusted agricultural marketplace.
+        </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-box">
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+        <a href="login2.html">Login</a>
+        <a href="sign up.html">Sign Up</a>
+        <a href="productshop.html">Shop</a>
+        <a href="service.html">Services</a>
+        <a href="view order.html">Orders</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-box">
+        <h3>Follow Us</h3>
+
+        <div class="social">
+
+            <a href="https://facebook.com" class="facebook" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://instagram.com" class="instagram" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://twitter.com" class="twitter" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="https://wa.me/250788123456" class="whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+        </div>
+    </div>
 
 </div>
+
+
 
 </footer>
-
 <script>
-// LOGIN
-function login() {
-  let name = document.getElementById("username").value;
 
-  if(name === "") {
-    alert("Please enter your name");
-  } else {
-    localStorage.setItem("user", name);
-    showOrder();
-  }
+/* LOGIN */
+function login(){
+
+let name = document.getElementById("username").value;
+
+if(name === ""){
+alert("Enter name");
+return;
 }
 
-// SHOW ORDER
-function showOrder() {
-  document.getElementById("loginBox").style.display = "none";
-  document.getElementById("orderBox").style.display = "block";
+localStorage.setItem("user", name);
+
+showOrder();
+
 }
 
-// LOGOUT
-function logout() {
-  localStorage.removeItem("user");
-  location.reload();
+/* SHOW ORDER FORM */
+function showOrder(){
+document.getElementById("loginBox").style.display="none";
+document.getElementById("orderBox").style.display="block";
 }
 
-// SUBMIT ORDER
-function submitOrder() {
-  alert("Order submitted successfully!");
+/* LOGOUT */
+function logout(){
+localStorage.removeItem("user");
+location.reload();
 }
 
-// AUTO LOGIN
+/* SHOW IMAGE */
+function showImage(){
+
+let img = document.getElementById("previewImage");
+let val = document.getElementById("productImage").value;
+
+if(val === ""){
+img.style.display="none";
+}else{
+img.src = val;
+img.style.display="block";
+}
+
+}
+
+/* SUBMIT ORDER */
+function submitOrder(){
+
+let customerName = document.getElementById("customerName").value;
+let phone = document.getElementById("phone").value;
+let address = document.getElementById("address").value;
+let quantity = document.getElementById("quantity").value;
+let productImage = document.getElementById("productImage").value;
+let date = document.getElementById("date").value;
+let payment = document.getElementById("payment").value;
+
+if(
+customerName===""||
+phone===""||
+address===""||
+quantity===""||
+productImage===""||
+date===""||
+payment==="Select Payment Method"
+){
+alert("Fill all fields");
+return;
+}
+
+let product =
+document.getElementById("productImage")
+.options[
+document.getElementById("productImage").selectedIndex
+].text;
+
+let orders =
+JSON.parse(localStorage.getItem("orders")) || [];
+
+let newOrder = {
+customerName,
+phone,
+address,
+quantity,
+product,
+productImage,
+date,
+payment,
+status:"Pending"
+};
+
+orders.push(newOrder);
+
+localStorage.setItem("orders", JSON.stringify(orders));
+
+alert("Order submitted!");
+
+window.location.href = "view order.html";
+
+}
+
+/* AUTO LOGIN */
 if(localStorage.getItem("user")){
-  showOrder();
+showOrder();
 }
+
 </script>
 
 </body>
