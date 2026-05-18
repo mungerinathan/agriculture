@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us - RW-Rulindo Agro Market</title>
+
+<!-- FONT AWESOME -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f5f5f5;
+    color:#333;
+}
+
+/* MAIN HEADER */
+
+.main-header{
+    background:linear-gradient(to right, green, darkgreen);
+    padding:15px 5%;
+    color:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.header-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid white;
+}
+
+.logo-text h1{
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.logo-text p{
+    font-size:14px;
+}
+
+/* NAVIGATION */
+
+.nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.nav a{
+    text-decoration:none;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.nav a:hover{
+    color:lime;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("buy.png");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+/* ABOUT */
+
+.about{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.about-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    align-items:center;
+}
+
+.about-image img{
+    width:100%;
+    max-width:450px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    color:green;
+    margin-bottom:15px;
+}
+
+.about-text p{
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:50px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card i{
+    font-size:40px;
+    color:green;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+/* LOCATION */
+
+.location{
+    margin-top:60px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.location h2{
+    color:rgb(11, 82, 11);
+    margin-bottom:20px;
+}
+
+.location p{
+    margin-bottom:12px;
+    font-size:17px;
+}
+
+/* MAP */
+
+.map-container{
+    margin-top:20px;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+.social-icons{
+    margin-top:15px;
+}
+
+.social-icons i{
+    margin:0 10px;
+    font-size:22px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.social-icons i:hover{
+    color:#125212;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.header-container{
+    flex-direction:column;
+    text-align:center;
+}
+
+.nav{
+    margin-top:20px;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:35px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.about-container{
+    flex-direction:column;
+    text-align:center;
+}
+
+}
+
+.footer{
+    background:linear-gradient(to right, #0b6623, #1a8f3a);
+    color:white;
+    padding:40px 20px;
+    margin-top:60px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.footer-box h3{
+    margin-bottom:10px;
+    font-size:20px;
+}
+
+.footer-box p{
+    font-size:14px;
+    line-height:1.6;
+}
+
+.footer-links,
+.social{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.footer-links a,
+.social a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.footer-links a:hover,
+.social a:hover{
+    color:yellow;
+    padding-left:5px;
+}
+
+.footer .copyright{
+    text-align:center;
+    margin-top:25px;
+    font-size:14px;
+    border-top:1px solid rgba(255,255,255,0.3);
+    padding-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="main-header">
+
+<div class="header-container">
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+      <a href="index.html">  <img src="agricultural logo.png" alt="Logo"></a>
+
+        <div class="logo-text">
+            <h1>RW-Rulindo Agro Market</h1>
+            <p>Welcome to market for crops and agricultural products</p>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+
+    <nav class="nav">
+
+        <a href="index.html">Home</a>
+
+        <a href="login2.html">Login</a>
+
+        <a href="productshop.html">Shop</a>
+
+        <a href="service.html">Services</a>
+
+        <a href="checkautform.html">Orders</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="about.html">About</a>
+
+    </nav>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>About RW-Rulindo Agro Market</h1>
+
+    <p>Connecting Farmers and Buyers Easily</p>
+
+</section>
+
+<!-- ABOUT SECTION -->
+
+<section class="about">
+
+<div class="about-container">
+
+    <!-- IMAGE -->
+
+    <div class="about-image">
+
+
+
+
+
+
+
+
+
+
+    <img src="seller.png">
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <!-- TEXT -->
+
+    <div class="about-text">
+
+        <h2>Who We Are</h2>
+
+        <p>
+            RW-Rulindo Agro Market is an online agriculture platform
+            created to help farmers sell their products easily and
+            connect with customers across Rwanda.
+        </p>
+
+        <p>
+            Our system supports digital farming business by allowing
+            farmers to upload products, communicate with buyers,
+            and grow their market online.
+        </p>
+
+        <h2>Our Mission</h2>
+
+        <p>
+            To improve agriculture business using modern technology.
+        </p>
+
+        <h2>Our Vision</h2>
+
+        <p>
+            To become the best online agro market platform in Rwanda.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- CARDS -->
+
+<div class="cards">
+
+    <div class="card">
+        <i class="fa-solid fa-seedling"></i>
+        <h3>Fresh Products</h3>
+        <p>We provide fresh agricultural products from local farmers.</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-users"></i>
+        <h3>Farmer Support</h3>
+        <p>Helping farmers connect directly with buyers.</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-truck"></i>
+        <h3>Easy Delivery</h3>
+        <p>Fast and easy transportation of products.</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-globe"></i>
+        <h3>Online Market</h3>
+        <p>Digital platform for agriculture business growth.</p>
+    </div>
+
+</div>
+
+<!-- LOCATION -->
+
+<div class="location">
+
+    <h2>
+        <i class="fa-solid fa-location-dot"></i>
+        Our Location
+    </h2>
+
+    <p><strong>District:</strong> Rulindo</p>
+
+    <p><strong>Province:</strong> Northern Province</p>
+
+    <p><strong>Country:</strong> Rwanda</p>
+
+    <p><strong>Email:</strong> rwagromarket@gmail.com</p>
+
+    <p><strong>Phone:</strong> +250 735 907 160</p>
+
+    <!-- GOOGLE MAP -->
+
+    <div class="map-container">
+
+        <iframe
+        src="https://www.google.com/maps?q=Rulindo,Rwanda&output=embed"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+        </iframe>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>RW-Rulindo Agro Market</h3>
+            <p>We connect farmers and buyers across Rwanda.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="login2.html">Login</a>
+                <a href="productshop.html">Shop</a>
+                <a href="service.html">Service</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+            <div class="social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="https://wa.me/250735907160">WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 RW-Rulindo Agro Market | All Rights Reserved
+    </p>
+
+</footer>
+
+
+
+
+</footer>
+
+</body>
+</html>

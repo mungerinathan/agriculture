@@ -7,14 +7,14 @@
 
 <style>
 
-/* ===== BODY ===== */
+/* BODY */
 body{
     margin:0;
     font-family:Arial, sans-serif;
     background:#e8f5e9;
 }
 
-/* ================= HEADER ================= */
+/* HEADER  */
 header{
     background:#1b5e20;
     color:white;
@@ -144,7 +144,7 @@ button:hover{
     border-radius:8px;
 }
 
-/* ================= FOOTER ================= */
+/*  FOOTER  */
 footer{
     background:#1b5e20;
     color:white;
@@ -215,7 +215,7 @@ footer{
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!--  HEADER  -->
 <header>
 
 <div class="header-container">
@@ -232,18 +232,19 @@ footer{
     <nav>
         <a href="index.html">Home</a>
         <a href="login2.html">Login</a>
-        <a href="sign up.html">Sign Up</a>
+      
         <a href="productshop.html">Shop</a>
         <a href="service.html">Services</a>
         <a href="checkautform.html">Orders</a>
         <a href="contact.html">Contact</a>
+        <a href="about.html">about</a>
     </nav>
 
 </div>
 
 </header>
 
-<!-- ================= MAIN ================= -->
+<!--  MAIN  -->
 <div class="container">
 
 <h3 id="showUser"></h3>
@@ -259,15 +260,9 @@ footer{
     <h3>Price</h3>
     <input type="number" id="price">
 
-    <h3>Quantity</h3>
+    <h3>Quantity/kg</h3>
     <input type="number" id="qty">
 
-    <h3>Category</h3>
-    <select id="category">
-        <option>Grains</option>
-        <option>Vegetables</option>
-        <option>Fruits</option>
-    </select>
 
     <h3>Location</h3>
     <input type="text" id="location">
@@ -278,14 +273,90 @@ footer{
 
     <h3>Upload Image</h3>
 
+    <!-- HIDDEN FILE INPUT -->
     <input type="file"
            id="file"
            accept="image/*"
-           onchange="previewImage(event)">
+           onchange="previewImage(event)"
+           hidden>
 
+    <!-- CUSTOM BUTTON -->
+    <label for="file" class="upload-btn">
+        📁 Choose File
+    </label>
+
+    <!-- GOOGLE SEARCH BUTTON -->
+    <a href="https://www.google.com/search?tbm=isch&q=agriculture+images"
+       target="_blank"
+       class="google-btn">
+
+       🔍 Search Image on Google
+
+    </a>
+
+    <br><br>
+
+    <!-- IMAGE PREVIEW -->
     <img id="preview">
 
 </div>
+
+<style>
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* BUTTONS */
+.upload-btn,
+.google-btn{
+    text-decoration:none;
+    background:green;
+    color:white;
+    padding:12px 18px;
+    border-radius:8px;
+    display:inline-block;
+    cursor:pointer;
+    margin-top:15px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+/* HOVER */
+.upload-btn:hover,
+.google-btn:hover{
+    background:darkgreen;
+    transform:scale(1.05);
+}
+
+/* IMAGE PREVIEW */
+#preview{
+    width:100%;
+    max-width:300px;
+    margin-top:20px;
+    border-radius:10px;
+    display:none;
+    border:3px solid green;
+}
+
+</style>
+
+<script>
+
+function previewImage(event){
+
+    let image = document.getElementById("preview");
+
+    image.src = URL.createObjectURL(event.target.files[0]);
+
+    image.style.display = "block";
+}
+
+</script>
 
 <div class="card">
 

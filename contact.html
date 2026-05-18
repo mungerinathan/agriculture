@@ -200,11 +200,12 @@ nav{
 <nav>
 <a href="index.html" class="active">Home</a>
 <a href="login2.html">Login</a>
-<a href="sign up.html">Sign Up</a>
+
 <a href="productshop.html">Shop</a>
 <a href="service.html">Services</a>
 <a href="checkautform.html">Orders</a>
 <a href="contact.html">Contact</a>
+<a href="about.html">about</a>
 </nav>
 
 </header>
@@ -248,6 +249,198 @@ nav{
 
     </div>
 </section>
+<script>
+function sendMessage(){
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    let data = {
+        name: name,
+        email: email,
+        message: message,
+        time: new Date().toLocaleString()
+    };
+
+    // fata messages zisanzwe
+    let messages = JSON.parse(localStorage.getItem("messages")) || [];
+
+    // ongeramo message nshya
+    messages.push(data);
+
+    // uzibike
+    localStorage.setItem("messages", JSON.stringify(messages));
+
+    alert("Message sent successfully!");
+
+    // clear form
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+}
+</script>
+
+
+
+<!-- ADMIN REPLIES SECTION -->
+
+<div class="reply-container">
+
+    <h2>Admin Replies</h2>
+
+    <div id="userReplies"></div>
+
+</div>
+
+<!-- CLEAR BUTTON -->
+
+<button class="clear-btn" onclick="clearReplies()">
+    <i class="fa-solid fa-trash"></i>
+    Clear All Replies
+</button>
+
+<style>
+
+/* GREEN CLEAR BUTTON */
+
+.clear-btn{
+    background:green;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:20px;
+    transition:0.3s;
+}
+
+.clear-btn:hover{
+    background:darkgreen;
+    transform:scale(1.05);
+}
+
+</style>
+
+<script>
+
+/* CLEAR REPLIES */
+
+function clearReplies(){
+
+    localStorage.removeItem("replies");
+
+    loadReplies();
+
+}
+
+</script>
+
+<style>
+
+/* REPLY CONTAINER */
+
+.reply-container{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+}
+
+/* TITLE */
+
+.reply-container h2{
+    color:green;
+    margin-bottom:20px;
+}
+
+/* REPLY CARD */
+
+.reply-card{
+    background:#e8f5e9;
+    padding:20px;
+    border-radius:12px;
+    margin:15px 0;
+    border-left:5px solid green;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.reply-card h3{
+    color:#1b5e20;
+    margin-bottom:10px;
+}
+
+.reply-card p{
+    line-height:1.7;
+}
+
+</style>
+
+<script>
+
+/* LOAD REPLIES */
+
+function loadReplies(){
+
+    let replies =
+    JSON.parse(localStorage.getItem("replies")) || [];
+
+    let container =
+    document.getElementById("userReplies");
+
+    container.innerHTML = "";
+
+    if(replies.length === 0){
+
+        container.innerHTML = `
+
+        <div class="reply-card">
+
+            <h3>No Replies Yet</h3>
+
+            <p>
+                Admin replies will appear here.
+            </p>
+
+        </div>
+
+        `;
+
+        return;
+    }
+
+    replies.forEach((reply)=>{
+
+        if(reply){
+
+            container.innerHTML += `
+
+            <div class="reply-card">
+
+                <h3>
+                    <i class="fa-solid fa-reply"></i>
+                    Admin Reply
+                </h3>
+
+                <p>${reply}</p>
+
+            </div>
+
+            `;
+
+        }
+
+    });
+
+}
+
+loadReplies();
+
+</script>
+
+
+
 
 <!-- FOOTER -->
 <footer>
