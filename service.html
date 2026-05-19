@@ -136,6 +136,114 @@ footer{
         padding:20px;
     }
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#1b5e20;
+    color:white;
+    padding:50px 20px 20px;
+    margin-top:40px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.footer-box h3{
+    margin-bottom:15px;
+    font-size:22px;
+    color:#ffeb3b;
+}
+
+.footer-box p{
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* LINKS */
+
+.footer-links{
+    list-style:none;
+    padding:0;
+}
+
+.footer-links li{
+    margin-bottom:10px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:#ffeb3b;
+    padding-left:5px;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    color:white;
+    font-size:20px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+/* COLORS */
+
+.facebook{
+    background:#1877f2;
+}
+
+.instagram{
+    background:#e1306c;
+}
+
+.twitter{
+    background:#1da1f2;
+}
+
+.whatsapp{
+    background:#25d366;
+}
+
+/* HOVER */
+
+.social-icons a:hover{
+    transform:translateY(-5px) scale(1.1);
+}
+
+/* COPYRIGHT */
+
+.footer-bottom{
+    text-align:center;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.2);
+    padding-top:15px;
+    font-size:14px;
+}
+
 </style>
 
 </head>
@@ -225,11 +333,71 @@ footer{
 </section>
 
 <!-- FOOTER -->
-<footer>
+<!-- FOOTER -->
+<footer class="footer">
 
-<h3>RW-Rulindo Agro Market</h3>
-<p>Trusted agricultural marketplace 🌾</p>
-<p>© 2026 All Rights Reserved</p>
+    <div class="footer-container">
+
+        <!-- ABOUT -->
+        <div class="footer-box">
+            <h3>RW-Rulindo Agro Market</h3>
+            <p>
+                We connect farmers and buyers across Rwanda with
+                trusted agricultural products and services.
+            </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login2.html">Login</a></li>
+                <li><a href="productshop.html">Shop</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="checkautform.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+
+        <!-- SOCIAL MEDIA -->
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+
+                <a href="https://facebook.com"
+                   class="facebook"
+                   target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://instagram.com"
+                   class="instagram"
+                   target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://twitter.com"
+                   class="twitter"
+                   target="_blank">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <a href="https://wa.me/250788123456"
+                   class="whatsapp"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+ 
 
 </footer>
 

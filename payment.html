@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Agri Payment System</title>
+
 <script src="https://unpkg.com/vue@3"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
 body{
     font-family:Arial;
     background:#eef2f7;
 }
 
+/* CONTAINER */
 .container{
     max-width:500px;
     margin:40px auto;
@@ -19,11 +22,13 @@ body{
     border-radius:10px;
 }
 
+/* TITLE */
 h2{
     text-align:center;
     color:green;
 }
 
+/* INPUTS */
 input, select, button{
     width:100%;
     padding:12px;
@@ -32,6 +37,7 @@ input, select, button{
     border:1px solid #ccc;
 }
 
+/* BUTTON */
 button{
     background:green;
     color:white;
@@ -39,6 +45,15 @@ button{
     cursor:pointer;
 }
 
+/* LABELS 👉 GREEN HERE */
+label{
+    color: green;
+    font-weight: bold;
+    display:block;
+    margin-top:10px;
+}
+
+/* CART */
 .cart{
     background:#f1f5f9;
     padding:10px;
@@ -46,11 +61,14 @@ button{
     margin-top:10px;
 }
 
+/* SUCCESS */
 .success{
     color:green;
     text-align:center;
     font-weight:bold;
 }
+
+/* HEADER */
 header{
     background:#1b5e20;
     color:white;
@@ -61,7 +79,7 @@ header{
     flex-wrap:wrap;
 }
 
-/* LOGO SECTION */
+/* LOGO */
 .logo{
     display:flex;
     align-items:center;
@@ -75,7 +93,6 @@ header{
     object-fit:cover;
 }
 
-/* TITLE */
 .logo h1{
     font-size:18px;
     margin:0;
@@ -87,7 +104,7 @@ header{
     opacity:0.8;
 }
 
-/* NAVIGATION */
+/* NAV */
 nav{
     display:flex;
     gap:15px;
@@ -100,13 +117,13 @@ nav a{
     font-weight:bold;
     padding:6px 10px;
     border-radius:5px;
-    transition:0.3s;
 }
 
 nav a:hover{
     background:rgba(255,255,255,0.2);
 }
 
+/* FOOTER */
 footer{
     background:#1b5e20;
     color:white;
@@ -128,8 +145,8 @@ footer a{
 </head>
 
 <body>
-    <header>
 
+<header>
 <div class="logo">
 <img src="agricultural logo.png">
 <div>
@@ -141,37 +158,37 @@ footer a{
 <nav>
 <a href="index.html">Home</a>
 <a href="login2.html">Login</a>
-
 <a href="productshop.html">Shop</a>
 <a href="service.html">Services</a>
 <a href="checkautform.html">Orders</a>
 <a href="contact.html">Contact</a>
-<a href="about.html">about</a>
-
+<a href="about.html">About</a>
 </nav>
-
 </header>
 
 <div id="app" class="container">
 
 <h2>🌱 Agri Payment</h2>
 
+<label>Enter customer name</label>
 <input v-model="name" placeholder="Customer Name">
 
-
-
+<label>Enter amount</label>
 <input type="number" v-model="amount" placeholder="Amount">
 
+<label>Enter MTN Mobile Money</label>
 <select v-model="method">
     <option>MTN Mobile Money</option>
     <option>Airtel Money</option>
     <option>Card</option>
 </select>
 
+<label>Enter order code</label>
+<input type="number" v-model="orderCode" placeholder="Order Code">
+
 <button @click="pay">Pay Now</button>
 
 <div class="cart">
-
     <p><b>Amount:</b> {{amount}} RWF</p>
 </div>
 
@@ -184,15 +201,15 @@ const app = {
 data(){
     return{
         name:"",
-        product:"Seeds",
         amount:"",
         method:"MTN Mobile Money",
+        orderCode:"",
         message:""
     }
 },
 methods:{
     async pay(){
-        if(!this.name || !this.amount){
+        if(!this.name || !this.amount || !this.orderCode){
             alert("Fill all fields");
             return;
         }
@@ -204,9 +221,9 @@ methods:{
             },
             body: JSON.stringify({
                 name:this.name,
-                product:this.product,
                 amount:this.amount,
-                method:this.method
+                method:this.method,
+                orderCode:this.orderCode
             })
         });
 
@@ -220,7 +237,6 @@ Vue.createApp(app).mount("#app");
 </script>
 
 <footer>
-
 <div class="footer-grid">
 
 <div>
@@ -231,45 +247,26 @@ Vue.createApp(app).mount("#app");
 <div>
 <h3>Quick Links</h3>
 <p><a href="index.html">Home</a></p>
-<p><a href="login2.html">login</a></p>
-
+<p><a href="login2.html">Login</a></p>
 <p><a href="productshop.html">Shop</a></p>
 <p><a href="service.html">Services</a></p>
-<p><a href="checkautform.html">Order</a></p>
-<p><a href="contact.html">contact</a></p>
-<a href="about.html">about</a>
-
+<p><a href="checkautform.html">Orders</a></p>
+<p><a href="contact.html">Contact</a></p>
+<p><a href="about.html">About</a></p>
 </div>
 
 <div>
 <h3>Follow Us</h3>
 
-<div class="social">
-
-<a href="https://facebook.com" class="facebook" target="_blank">
-<i class="fa-brands fa-facebook-f"></i>
-</a>
-
-<a href="https://instagram.com" class="instagram" target="_blank">
-<i class="fa-brands fa-instagram"></i>
-</a>
-
-<a href="https://twitter.com" class="twitter" target="_blank">
-<i class="fa-brands fa-twitter"></i>
-</a>
-
-<a href="https://wa.me/250788123456" class="whatsapp" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-</a>
+<a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+<a href="https://wa.me/250788123456"><i class="fa-brands fa-whatsapp"></i></a>
 
 </div>
 
 </div>
-
-</div>
-
 </footer>
-
 
 </body>
 </html>
