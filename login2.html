@@ -87,7 +87,7 @@ background:white;
 padding:30px;
 border-radius:12px;
 width:320px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+box-shadow:0 10px 30px rgba(32, 8, 244, 0.2);
 text-align:center;
 }
 
@@ -169,12 +169,10 @@ display:none;
 <!-- MAIN -->
 <div class="main">
 
-<div class="login-box">
-
-<h2>Login Form</h2>
-
 <!-- LOGIN -->
-<div id="loginForm">
+<div class="login-box" id="loginForm">
+
+<h2>Login</h2>
 
 <input type="text"
 id="loginUsername"
@@ -202,7 +200,9 @@ Forgot Password?
 
 <!-- SIGNUP -->
 <div id="signupForm"
-class="hidden">
+class="login-box hidden">
+
+<h2>Create Account</h2>
 
 <input type="text"
 id="newUsername"
@@ -225,7 +225,9 @@ Back to Login
 
 <!-- FORGOT -->
 <div id="forgotForm"
-class="hidden">
+class="login-box hidden">
+
+<h2>Reset Password</h2>
 
 <input type="text"
 id="forgotUsername"
@@ -239,8 +241,6 @@ Reset Password
 onclick="showLogin()">
 Back to Login
 </span>
-
-</div>
 
 </div>
 

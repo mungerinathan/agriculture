@@ -657,24 +657,50 @@ function previewImage(event){
 </footer>
 
 <!-- ================= JAVASCRIPT  -->
+
+
 <script>
 
-/* SHOW LOGGED IN USER */
+/* CHECK LOGIN */
+
+let currentUser = localStorage.getItem("currentUser");
+
+if(!currentUser){
+
+    let answer = confirm(
+        "You must login first.\n\nClick OK to Login."
+    );
+
+    if(answer){
+
+        window.location.href = "login2.html";
+
+    }else{
+
+        window.location.href = "index.html";
+    }
+}
+
+/* SHOW USER */
+
 window.onload = function(){
 
     let user = localStorage.getItem("currentUser");
 
     if(user){
+
         document.getElementById("showUser").innerText =
         "Welcome " + user;
+
     }else{
+
         document.getElementById("showUser").innerText =
         "Welcome Guest";
     }
-
 };
 
 /* IMAGE PREVIEW */
+
 function previewImage(event){
 
     let img = document.getElementById("preview");
@@ -685,15 +711,21 @@ function previewImage(event){
 }
 
 /* SUBMIT PRODUCT */
+
 function submitProduct(){
 
     let file = document.getElementById("file").files[0];
 
     let name = document.getElementById("name").value;
+
     let desc = document.getElementById("desc").value;
+
     let price = document.getElementById("price").value;
+
     let qty = document.getElementById("qty").value;
+
     let category = document.getElementById("category").value;
+
     let location = document.getElementById("location").value;
 
     if(name === "" || !file){
@@ -737,6 +769,5 @@ function submitProduct(){
 }
 
 </script>
-
 </body>
 </html>

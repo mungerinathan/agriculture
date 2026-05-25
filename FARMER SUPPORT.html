@@ -420,12 +420,36 @@ footer{
 <div class="card">
 <h2>🧑‍🌾 Ask for Farming Advice</h2>
 
-<form>
-<input type="text" placeholder="Your Name">
-<input type="text" placeholder="Crop Type (e.g. Maize)">
-<textarea rows="4" placeholder="Describe your problem..."></textarea>
-<button type="submit">Send Request</button>
+<form id="adviceForm">
+
+<input type="text"
+id="name"
+placeholder="Your Name"
+required>
+
+<input type="text"
+id="crop"
+placeholder="Crop Type"
+required>
+
+<textarea id="problem"
+placeholder="Describe your problem..."
+required></textarea>
+
+<button type="submit">
+Send Request
+</button>
+
+
 </form>
+<div class="card">
+<h2>📩 Admin Reply</h2>
+
+<div id="replyContainer">
+<p>No reply yet</p>
+</div>
+
+</div>
 
 </div>
 
@@ -536,6 +560,106 @@ Contact Us
     </div>
 
 </footer>
+
+<script>
+
+const adviceForm =
+document.getElementById("adviceForm");
+
+adviceForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    // GET VALUES
+    const name =
+    document.getElementById("name").value;
+
+    const crop =
+    document.getElementById("crop").value;
+
+    const problem =
+    document.getElementById("problem").value;
+
+    // CREATE OBJECT
+    const request = {
+        name:name,
+        crop:crop,
+        problem:problem
+    };
+
+    // GET OLD DATA
+    let requests =
+    JSON.parse(
+    localStorage.getItem("farmingRequests")
+    ) || [];
+
+    // ADD NEW DATA
+    requests.push(request);
+
+    // SAVE
+    localStorage.setItem(
+    "farmingRequests",
+    JSON.stringify(requests)
+    );
+
+    alert("Request Sent");
+
+    adviceForm.reset();
+
+});
+
+
+
+function loadReply(){
+
+    let requests =
+    JSON.parse(localStorage.getItem("farmingRequests")) || [];
+
+    const replyContainer =
+    document.getElementById("replyContainer");
+
+    // FIND LAST REQUEST WITH REPLY
+    let replied = requests.filter(r => r.reply && r.reply.trim() !== "");
+
+    if(replied.length === 0){
+        replyContainer.innerHTML =
+        "<p>No reply yet from admin</p>";
+        return;
+    }
+
+    // SHOW LAST REPLY
+    let last = replied[replied.length - 1];
+
+    replyContainer.innerHTML = `
+
+    <div style="
+    background:#f1f8e9;
+    padding:15px;
+    border-radius:10px;
+    border-left:5px solid #2e7d32;
+    ">
+
+    <p><b>Crop:</b> ${last.crop}</p>
+    <p><b>Problem:</b> ${last.problem}</p>
+
+    <p><b>Admin Reply:</b></p>
+    <p>${last.reply}</p>
+
+    </div>
+
+    `;
+
+}
+
+// LOAD ON PAGE START
+loadReply();
+
+// AUTO UPDATE EVERY 3 SECONDS
+setInterval(loadReply, 3000);
+
+
+
+</script>
 
 </body>
 </html>
